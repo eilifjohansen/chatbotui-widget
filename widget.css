@@ -1,0 +1,292 @@
+iframe {
+  margin: 0 !important;
+}
+
+#_botChatFrameBody {
+  margin: 0;
+  padding: 0;
+}
+
+#chatWindow {
+  width: 360px !important;
+  background-color: #fff;
+  box-shadow: 1px 1px 12px 1px #8a8a8a;
+  -webkit-box-shadow: 1px 1px 12px 1px #8a8a8a;
+  -moz-box-shadow: 1px 1px 12px 1px #8a8a8a;
+  border-radius: 4px 4px 4px 4px;
+  border: 0px solid #2d99fc !important;
+  /*border-bottom: none;*/
+  font-family: Helvetica, sans-serif;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0 !important;
+  right: 1% !important;
+  max-width: 98% !important;
+  height: 99%;
+  margin-bottom: 0px;
+}
+
+#chatWindow-header {
+  background-color: #f47d43;
+  width: 100%;
+  float: left;
+  cursor: pointer;
+  height: 40px !important;
+  margin-bottom: 1px;
+}
+
+#chatWindow-header #avatar {
+  height: 35px;
+  border-radius: 5px;
+  display: inline-block;
+  float: left;
+  width: 70px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+#chatWindow-header h1 {
+  font-size: 14px;
+  color: #fff;
+  float: left;
+  font-weight: 700 !important;
+  margin: 0px !important;
+  height: 36px;
+  line-height: 36px;
+  padding: 0px 0px 0px 12px;
+}
+
+#_botChatFrame {
+  width: 100% !important;
+  /*padding: 4px 6px !important;*/
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.message-text p {
+  margin: 0;
+}
+
+.message-text q {
+  display: inline;
+}
+
+.message-text b > p {
+  display: inline;
+  margin: 0;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+#chatWindow-content {
+  float: left;
+  overflow: hidden;
+  margin-top: 10px;
+  width: 99%;
+  font-family: Helvetica, sans-serif;
+  height: 325px;
+  padding: 0 0 8px 3px;
+}
+
+#dialog {
+  list-style-type: none;
+  height: 330px;
+  width: 350px;
+}
+
+#dialog .message {
+  margin-bottom: 3px;
+  margin-right: 10px;
+  border-bottom: 1px solid #e4e4e4;
+  position: relative;
+  line-height: 23px;
+  font-size: 14px;
+  padding: 3px 4px;
+}
+
+#dialog .message .content {
+  display: inline-block;
+}
+
+#dialog .message.user {
+  color: #3c372e;
+}
+
+#dialog .message a {
+  text-decoration: none;
+  color: #2688f1;
+}
+
+#dialog .message a:hover {
+  text-decoration: underline;
+}
+
+#dialog .message.bot,
+.message.Bot {
+  color: #8e3422;
+}
+
+.message-text {
+  word-break: break-word;
+  display: inline;
+}
+
+.speech-buble {
+  float: left;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  margin: 3px 5px 0 10px;
+}
+
+#chatWindow-form {
+  height: 37px;
+  float: left;
+  margin-top: 4px;
+}
+
+#chatWindow-form #shoutbox {
+  font-size: 16px;
+  height: 33px;
+  width: 347px;
+  border: 1px solid #c1c1c1;
+  border-radius: 5px;
+  outline: inherit;
+  -webkit-box-shadow: inset 2px 3px 6px 0 #ddd;
+  -moz-box-shadow: inset 2px 3px 6px 0 #ddd;
+  box-shadow: inset 2px 3px 6px 0 #ddd;
+  margin-left: 5px;
+  padding: 1px 0 0 10px;
+}
+
+#chatWindow .caret {
+  width: 17.4px;
+  float: right;
+  height: 0;
+  border: 2px solid #fff;
+  margin: 18px 24px 0 0;
+}
+
+.ui-autocomplete span.hl_results {
+  background-color: #ff6;
+  max-width: 350px;
+}
+
+.ui-menu .ui-menu-item {
+  max-width: 350px;
+}
+
+.ui-autocomplete-loading {
+  background: #fff url(ui-theme/images/ui-anim_basic_16x16.gif) right center
+    no-repeat;
+}
+
+.ui-autocomplete {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 5px;
+}
+
+.ui-autocomplete li {
+  font-size: 13px;
+}
+
+* html .ui-autocomplete {
+  height: 250px;
+}
+
+#_chatBubble {
+  z-index: 999;
+  position: fixed;
+  max-height: 40px;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  background-color: #2d99fc !important;
+  bottom: 0 !important;
+  box-shadow: none !important;
+  padding: 0px !important;
+  transition: 0.2s;
+  right: 1% !important;
+  max-width: 96%;
+}
+
+#_chatBubble:hover {
+  background-color: #55aeff !important;
+}
+
+/*
+._bubble-label {
+  color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  margin: 0 !important;
+  overflow: hidden;
+}*/
+
+._bubble-label {
+  color: #fff;
+  font-size: 18px;
+  padding: 5.5px 15px 0px 15px;
+  margin: 0 !important;
+  /* width: 170px; */
+  text-align: left;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  height: 35px;
+  line-height: 32px;
+  box-sizing: initial;
+  /* background: url(https://sessbot.com/statics/greenbot.png) 6px center no-repeat;
+  background-size: 20px;*/
+}
+
+#_chatBubble:focus {
+  outline: 3px solid blue !important;
+}
+
+._bubble-label img {
+  float: left;
+  margin-bottom: 3px;
+  height: 26px;
+  width: 26px;
+}
+
+#chatWindow-header .speech-buble {
+  margin-top: 10px;
+}
+
+#chatWindow #chatWindow-header {
+  background-color: #2d99fc !important;
+}
+
+#chatWindow-content .message.bot {
+  color: #185a82 !important;
+  font-size: 14px !important;
+}
+
+#chatWindow-content .message.user {
+  color: #6b6b6b !important;
+  font-size: 14px !important;
+}
+
+#dialog .message.user .avatar,
+#dialog .message.bot .avatar,
+#dialog .user.message .avatar,
+#dialog .bot.message .avatar,
+._disable,
+.message-text > br {
+  display: none;
+}
+
+#chatWindow-form #shoutbox::-webkit-input-placeholder,
+#chatWindow-form #shoutbox:-moz-placeholder,
+#chatWindow-form #shoutbox::-moz-placeholder,
+#chatWindow-form #shoutbox:-ms-input-placeholder {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 350;
+  color: #c9c9c9;
+}
