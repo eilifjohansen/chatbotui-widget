@@ -1,4 +1,4 @@
-var bubbleControl = function() {
+var bubbleControl = function () {
   if (window._widgetTitle) {
     var name = window._widgetTitle;
   } else {
@@ -17,7 +17,7 @@ var bubbleControl = function() {
     var width = "170px";
   }
 
-  var username = window._botUsername;
+  var botURL = window._botURL;
 
   var botChatContainer =
     '<div id="_chatBubble" tabindex="0" role="button" aria-label="Open chat" style="background: ' +
@@ -48,7 +48,7 @@ var bubbleControl = function() {
     if (!document.getElementById("_botChatFrame")) {
       var botChatFrame = document.createElement("iframe");
       botChatFrame.setAttribute("id", "_botChatFrame");
-      botChatFrame.setAttribute("src", username);
+      botChatFrame.setAttribute("src", botURL);
       botChatFrame.setAttribute("scrolling", "yes");
       botChatFrame.setAttribute("frameborder", "0");
       botChatFrame.style.width = "380px";
@@ -81,7 +81,7 @@ var bubbleControl = function() {
 
   function _bindElements() {
     var _cBubble = document.getElementById("_chatBubble");
-    _cBubble.onclick = function() {
+    _cBubble.onclick = function () {
       _openChatWindow();
     };
     _cBubble.onkeyup = function keyPress(e) {
@@ -90,7 +90,7 @@ var bubbleControl = function() {
       if (wkey == 32) _openChatWindow();
     };
     var _cHeader = document.getElementById("chatWindow-header");
-    _cHeader.onclick = function() {
+    _cHeader.onclick = function () {
       _closeChatWindow();
     };
     document.onkeyup = function keyPress(e) {
@@ -103,7 +103,7 @@ var bubbleControl = function() {
       if (wkey == 32) _closeChatWindow();
     };
     var _cBubble2 = document.getElementsByClassName("open-sesschat")[0];
-    _cBubble2.onclick = function() {
+    _cBubble2.onclick = function () {
       _openChatWindow();
     };
     _cBubble2.onkeyup = function keyPress(e) {
@@ -112,7 +112,7 @@ var bubbleControl = function() {
     };
   }
 
-  _createElements(botChatContainer, function() {
+  _createElements(botChatContainer, function () {
     _bindElements();
   });
 
