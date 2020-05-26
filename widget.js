@@ -11,13 +11,19 @@ var bubbleControl = function () {
     var color = "#1976d2";
   }
 
+  if (window._widgetBackground) {
+    var background = window._widgetBackground;
+  } else {
+    var background = "#ffffff";
+  }
+
   if (window._widgetWidth) {
     var width = window._widgetWidth;
   } else {
     var width = "170px";
   }
 
-  var botURL = window._botURL;
+  var username = window._botUsername;
 
   var botChatContainer =
     '<div id="_chatBubble" tabindex="0" role="button" aria-label="Open chat" style="background: ' +
@@ -31,7 +37,9 @@ var bubbleControl = function () {
     ' </span> \
      </div> \
     </div> \
-    <div id="chatWindow" class="_disable"> \
+    <div id="chatWindow" class="_disable" style="background: ' +
+    background +
+    ' !important"> \
     <div id="chatWindow-header"  style="background: ' +
     color +
     ' !important"> \
@@ -48,7 +56,7 @@ var bubbleControl = function () {
     if (!document.getElementById("_botChatFrame")) {
       var botChatFrame = document.createElement("iframe");
       botChatFrame.setAttribute("id", "_botChatFrame");
-      botChatFrame.setAttribute("src", botURL);
+      botChatFrame.setAttribute("src", username);
       botChatFrame.setAttribute("scrolling", "yes");
       botChatFrame.setAttribute("frameborder", "0");
       botChatFrame.style.width = "380px";
