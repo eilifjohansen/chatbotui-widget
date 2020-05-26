@@ -23,7 +23,7 @@ var bubbleControl = function () {
     var width = "170px";
   }
 
-  var username = window._botUsername;
+  var botURL = window._botURL;
 
   var botChatContainer =
     '<div id="_chatBubble" tabindex="0" role="button" aria-label="Open chat" style="background: ' +
@@ -56,7 +56,7 @@ var bubbleControl = function () {
     if (!document.getElementById("_botChatFrame")) {
       var botChatFrame = document.createElement("iframe");
       botChatFrame.setAttribute("id", "_botChatFrame");
-      botChatFrame.setAttribute("src", username);
+      botChatFrame.setAttribute("src", botURL);
       botChatFrame.setAttribute("scrolling", "yes");
       botChatFrame.setAttribute("frameborder", "0");
       botChatFrame.style.width = "380px";
