@@ -18,7 +18,7 @@ iframe {
     border: 0px solid #2d99fc !important;
     font-family: Helvetica, sans-serif;
     position: fixed;
-    z-index: 9999;
+    z-index: 9999999 !important;
     bottom: 0 !important;
     right: 1% !important;
     max-width: 98% !important;
@@ -38,7 +38,7 @@ iframe {
     border: 0px solid #2d99fc !important;
     font-family: Helvetica, sans-serif;
     position: fixed;
-    z-index: 9999;
+    z-index: 9999999 !important;
     right: 0% !important;
     bottom: 0 !important;
     height: 100%;
