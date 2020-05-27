@@ -7,23 +7,43 @@ iframe {
   padding: 0;
 }
 
-#chatWindow {
-  width: 360px !important;
-  background-color: #fff;
-  box-shadow: 1px 1px 12px 1px #8a8a8a;
-  -webkit-box-shadow: 1px 1px 12px 1px #8a8a8a;
-  -moz-box-shadow: 1px 1px 12px 1px #8a8a8a;
-  border-radius: 4px 4px 4px 4px;
-  border: 0px solid #2d99fc !important;
-  /*border-bottom: none;*/
-  font-family: Helvetica, sans-serif;
-  position: fixed;
-  z-index: 9999999 !important;
-  bottom: 0 !important;
-  right: 1% !important;
-  max-width: 98% !important;
-  height: 99%;
-  margin-bottom: 0px;
+@media only screen and (min-width: 480px) {
+  #chatWindow {
+    width: 360px !important;
+    background-color: #fff;
+    box-shadow: 1px 1px 12px 1px #8a8a8a;
+    -webkit-box-shadow: 1px 1px 12px 1px #8a8a8a;
+    -moz-box-shadow: 1px 1px 12px 1px #8a8a8a;
+    border-radius: 4px 4px 4px 4px;
+    border: 0px solid #2d99fc !important;
+    font-family: Helvetica, sans-serif;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0 !important;
+    right: 1% !important;
+    max-width: 98% !important;
+    height: 99%;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  #chatWindow {
+    width: 100% !important;
+    background-color: #fff;
+    box-shadow: 1px 1px 12px 1px #8a8a8a;
+    -webkit-box-shadow: 1px 1px 12px 1px #8a8a8a;
+    -moz-box-shadow: 1px 1px 12px 1px #8a8a8a;
+    border-radius: 4px 4px 4px 4px;
+    border: 0px solid #2d99fc !important;
+    font-family: Helvetica, sans-serif;
+    position: fixed;
+    z-index: 9999;
+    right: 0% !important;
+    bottom: 0 !important;
+    height: 100%;
+    margin-bottom: 0px;
+  }
 }
 
 #chatWindow-header {
