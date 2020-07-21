@@ -110,10 +110,6 @@ var bubbleControl = function () {
       if (wkey == 13) _closeChatWindow();
       if (wkey == 32) _closeChatWindow();
     };
-    _cBubble2.onkeyup = function keyPress(e) {
-      wkey = e.which ? e.which : window.event.keyCode;
-      if (wkey == 13) _openChatWindow();
-    };
   }
 
   _createElements(botChatContainer, function () {
