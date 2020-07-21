@@ -110,6 +110,10 @@ var bubbleControl = function () {
       if (wkey == 13) _closeChatWindow();
       if (wkey == 32) _closeChatWindow();
     };
+    var _cBubble2 = document.getElementsByClassName("open-sesschat")[0];
+    _cBubble2.onclick = function () {
+      _openChatWindow();
+    };
     _cBubble2.onkeyup = function keyPress(e) {
       wkey = e.which ? e.which : window.event.keyCode;
       if (wkey == 13) _openChatWindow();

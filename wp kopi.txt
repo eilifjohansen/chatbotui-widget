@@ -1,0 +1,20 @@
+
+    <script type="text/javascript">
+      var headID = document.getElementsByTagName("head")[0];
+      var newCss = document.createElement("link");
+      newCss.rel = "stylesheet";
+      newCss.type = "text/css";
+// Hello
+      window._botURL =
+        "https://test.sessbot.com/?w=aHR0cHM6Ly9ub2RlZ3JlZW4uc2Vzc2JvdC5jb20vaW5rbHVk&n=SW5rbHVk&i=aHR0cHM6Ly9tZWRpYS1leHAxLmxpY2RuLmNvbS9kbXMvaW1hZ2UvQzU2MEJBUUZzcDFFbE5LbnEzZy9jb21wYW55LWxvZ29fMjAwXzIwMC8wP2U9MTU5NzI3NjgwMCZ2PWJldGEmdD1oX2dGQ3hTbUI0MnZQRDNlRFJPMmxlZ1A0NkNORUlDcmRrYXJJWGRRN0h3&c=I0I2MDAwMA==";
+      window._widgetTitle = "Chat";
+      window._widgetColor = "#B60000";
+      window._widgetBackground = "rgb(255, 255, 255, 0.9)";
+      window._widgetWidth = "170px";
+      newCss.href = "https://widget.sessbot.com/widget.css";
+      var newScript = document.createElement("script");
+      newScript.src = "https://widget.sessbot.com/widget.js";
+      newScript.type = "text/javascript";
+      headID.appendChild(newScript);
+      headID.appendChild(newCss);
+    </script>
