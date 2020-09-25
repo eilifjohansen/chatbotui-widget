@@ -31,8 +31,11 @@ function loadjscssfile(filename, filetype) {
     document.getElementsByTagName("head")[0].appendChild(fileref);
 }
 
-loadjscssfile("static/js/materialize.min.js", "js"); //dynamically load and add this .js file
-loadjscssfile("static/css/style.css", "css"); //dynamically load and add this .css file
+loadjscssfile(
+  "https://widget.chatbotui.com/v2/static/js/materialize.min.js",
+  "js"
+); //dynamically load and add this .js file
+loadjscssfile("https://widget.chatbotui.com/v2/static/css/style.css", "css"); //dynamically load and add this .css file
 
 setTimeout(() => {
   document.body.insertAdjacentHTML(
