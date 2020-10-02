@@ -1,6 +1,6 @@
 /* ============= css related to chats =============== */
 
-.widget {
+.chatwidget {
   display: none;
   width: 350px;
   right: 15px;

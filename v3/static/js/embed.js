@@ -31,7 +31,7 @@ loadjscssfile("https://widget.chatbotui.com/v3/static/css/style.css", "css"); //
 setTimeout(() => {
   document.body.insertAdjacentHTML(
     "beforeEnd",
-    '<div class="widget" tabindex="-1" id="widget"><div class="chat_header" style="background: ' +
+    '<div class="chatwidget" tabindex="-1" id="chatwidget"><div class="chat_header" style="background: ' +
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
@@ -57,16 +57,16 @@ setTimeout(() => {
     }, 4000);
   });
 
-  var widget = document.getElementById("profile_div");
-  widget.onkeyup = function keyPress(e) {
+  var chatwidget = document.getElementById("profile_div");
+  chatwidget.onkeyup = function keyPress(e) {
     wkey = e.which ? e.which : window.event.keyCode;
     if (wkey == 13) hello();
     if (wkey == 32) hello();
 
     function hello() {
       toggleVisibility(".profile_div");
-      toggleVisibility(".widget");
-      document.querySelector(".widget").focus();
+      toggleVisibility(".chatwidget");
+      document.querySelector(".chatwidget").focus();
     }
   };
 
@@ -473,7 +473,7 @@ setTimeout(() => {
 
   //====================================== Toggle chatbot =======================================
   document.querySelector("#profile_div").addEventListener("click", function () {
-    toggleVisibility(".widget");
+    toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
   });
 
@@ -581,20 +581,20 @@ setTimeout(() => {
 
     function restartchataction() {
       restartConversation();
-      document.querySelector(".widget").focus();
+      document.querySelector(".chatwidget").focus();
     }
   };
 
-  //clear function to clear the chat contents of the widget.
+  //clear function to clear the chat contents of the chatwidget.
   if (document.querySelector("#clear")) {
     document.querySelector("#clear").addEventListener("click", function () {
       document.querySelector(".chats").innerHTML = "";
     });
   }
 
-  //close function to close the widget.
+  //close function to close the chatwidget.
   addEventListenerById("click", "closeIcon", function () {
-    toggleVisibility(".widget");
+    toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
   });
@@ -606,15 +606,15 @@ setTimeout(() => {
     if (wkey == 32) closechataction();
 
     function closechataction() {
-      toggleVisibility(".widget");
+      toggleVisibility(".chatwidget");
       toggleVisibility(".profile_div");
       scrollToBottomOfResults();
     }
   };
 
-  //minimize function to minimize the widget.
+  //minimize function to minimize the chatwidget.
   document.querySelector("#minimize").addEventListener("click", function () {
-    toggleVisibility(".widget");
+    toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
   });
@@ -626,7 +626,7 @@ setTimeout(() => {
     if (wkey == 32) minimizechataction();
 
     function minimizechataction() {
-      toggleVisibility(".widget");
+      toggleVisibility(".chatwidget");
       toggleVisibility(".profile_div");
       scrollToBottomOfResults();
     }
