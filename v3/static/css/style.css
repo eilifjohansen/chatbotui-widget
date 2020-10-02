@@ -391,7 +391,7 @@ div.content_data::-webkit-scrollbar {
 /* css for single card */
 
 .singleCard {
-  padding-left: 10%;
+  padding-left: 42px;
   padding-right: 10px;
 }
 
