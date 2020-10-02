@@ -199,6 +199,7 @@ textarea-webkit-scrollbar {
   bottom: 10px;
   right: 0;
   cursor: pointer;
+  z-index: 999999;
 }
 
 /* css for dropdown menu of the bot */
