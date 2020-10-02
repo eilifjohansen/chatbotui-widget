@@ -35,13 +35,13 @@ setTimeout(() => {
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
-      '</span><span class="dropdown-trigger" href="#" data-target="dropdown1"><a href="#" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
+      '</span><span class="dropdown-trigger"><a href="#" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
       minimizebot +
       '</a><a href="#" id="restart" style="padding-right: 2.5px; color: #fff" >' +
       refreshbot +
       '</a > <a href="#" id="close" style="color: #fff" >' +
       closebot +
-      '</a > </span> <ul id="dropdown1" class="dropdown-content"> </ul> </div> <div class="chats" id="chats"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" tabindex="0">' +
+      '</a > </span></div> <div class="chats" id="chats"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" tabindex="0">' +
       sendbot +
       '</div> </div></div></div><div class="profile_div" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
       botphoto +
