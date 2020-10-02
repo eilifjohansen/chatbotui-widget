@@ -15,12 +15,7 @@ minimizebot =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 11.5 24 17" class="undefined ns-fill-0" fill="#ffffff" width="40" height="25"> <path d="M6 19h12v2H6v-2z"/></svg>';
 
 function loadjscssfile(filename, filetype) {
-  if (filetype == "js") {
-    //if filename is a external JavaScript file
-    var fileref = document.createElement("script");
-    fileref.setAttribute("type", "text/javascript");
-    fileref.setAttribute("src", filename);
-  } else if (filetype == "css") {
+  if (filetype == "css") {
     //if filename is an external CSS file
     var fileref = document.createElement("link");
     fileref.setAttribute("rel", "stylesheet");
