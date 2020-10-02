@@ -15,10 +15,9 @@
 }
 
 .chat_header {
-  height: 42.5px;
   background: #1976d2;
   border-radius: 10px 10px 0px 0px;
-  padding: 5px;
+  padding 5px 5px 30px 5px;
   font-size: 20px;
 }
 
