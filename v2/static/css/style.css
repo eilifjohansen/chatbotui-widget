@@ -889,11 +889,11 @@ video:focus {
   border-bottom: 1px solid #ddd;
 }
 
-ul:not(.browser-default) > li {
+#chatwidget > ul:not(.browser-default) > li {
   list-style-type: none;
 }
 
-ul:not(.browser-default) {
+#chatwidget > ul:not(.browser-default) {
   padding-left: 0;
   list-style-type: none;
 }
