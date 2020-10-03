@@ -803,11 +803,10 @@ video:focus {
 .video-container iframe,
 .video-container object,
 .video-container embed {
-  position: absolute;
+  position: initial;
   top: 0;
   left: 0;
   width: 90%;
-  height: 100%;
   margin-left: 5%;
   border-radius: 10px;
   border-style: none;
