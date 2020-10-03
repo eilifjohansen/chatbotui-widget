@@ -835,7 +835,9 @@ setTimeout(() => {
   //======================================bot typing animation ======================================
   function showBotTyping() {
     var botTyping =
-      '<img class="botAvatar" id="botAvatar" src="./static/img/CoviduSmall.png"/><div class="botTyping">' +
+      '<img class="botAvatar" id="botAvatar" src="' +
+      botphoto +
+      '"/><div class="botTyping">' +
       '<div class="bounce1"></div>' +
       '<div class="bounce2"></div>' +
       '<div class="bounce3"></div>' +
