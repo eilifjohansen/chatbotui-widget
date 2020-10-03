@@ -39,7 +39,7 @@ setTimeout(() => {
       minimizebot +
       '</a><a href="#" id="restart" style="padding-right: 2.5px; color: #fff" >' +
       refreshbot +
-      '</a><a href="#" id="close" style="color: #fff" >' +
+      '</a><a href="#" id="close" style="padding-right: 2.5px; color: #fff" >' +
       closebot +
       '</a></span></div><div class="chats" id="chats"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" tabindex="0">' +
       sendbot +
@@ -394,6 +394,7 @@ setTimeout(() => {
               document.querySelector(".chats").innerHTML += BotResponse;
             }
           }
+
           //check if the response contains "custom" message
           if (response[i].hasOwnProperty("custom")) {
             //check if the custom payload type is "quickReplies"
