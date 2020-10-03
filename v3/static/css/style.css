@@ -898,3 +898,12 @@ video:focus {
   box-sizing: border-box;
   padding: 2rem;
 }
+
+ul:not(.browser-default) > li {
+  list-style-type: none;
+}
+
+ul:not(.browser-default) {
+  padding-left: 0;
+  list-style-type: none;
+}
