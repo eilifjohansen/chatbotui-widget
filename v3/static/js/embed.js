@@ -37,7 +37,7 @@ setTimeout(() => {
       botname +
       '</span><span class="dropdown-trigger"><a href="#" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
       minimizebot +
-      '</a><a href="#" id="restart" style="padding-right: 5px; color: #fff" >' +
+      '</a><a href="#" id="restart" style="padding-right: 8px; color: #fff" >' +
       refreshbot +
       '</a><a href="#" id="close" style="color: #fff" >' +
       closebot +
