@@ -1,24 +1,130 @@
 /* ============= css related to chats =============== */
 
-.chatwidget {
-  display: none;
-  width: 350px;
-  right: 15px;
-  height: 500px;
-  bottom: 5%;
-  position: fixed;
-  background: #f7f7f7;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
-  outline: 0px;
-  z-index: 999999;
+/* On larger screens */
+@media only screen and (min-width: 480px) {
+  .chatwidget {
+    display: none;
+    width: 350px;
+    right: 15px;
+    height: 500px;
+    bottom: 5%;
+    position: fixed;
+    background: #f7f7f7;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    outline: 0px;
+    z-index: 999999;
+  }
+
+  #chatWindow {
+    width: 360px !important;
+    background-color: #fff;
+    box-shadow: 1px 1px 12px 1px #8a8a8a;
+    -webkit-box-shadow: 1px 1px 12px 1px #8a8a8a;
+    -moz-box-shadow: 1px 1px 12px 1px #8a8a8a;
+    border-radius: 4px 4px 4px 4px;
+    border: 0px solid #2d99fc !important;
+    font-family: Helvetica, sans-serif;
+    position: fixed;
+    z-index: 9999999 !important;
+    bottom: 0 !important;
+    right: 1% !important;
+    max-width: 98% !important;
+    height: 99%;
+    margin-bottom: 0px;
+  }
+
+  .chat_header {
+    background: #1976d2;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px 5px 47px 5px;
+    font-size: 20px;
+  }
+
+  .chats {
+    clear: both;
+    height: 385px;
+    padding: 2px;
+    border-radius: 1px;
+    overflow-y: scroll;
+    margin-top: 1px;
+    transition: 0.2s;
+  }
+
+  div.chats::-webkit-scrollbar {
+    overflow-y: hidden;
+    width: 0px;
+    /* remove scrollbar space /
+    background: transparent;
+    / optional: just make scrollbar invisible */
+  }
+
+  #chat-footer {
+    padding-top: 12.5px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+  }
 }
 
-.chat_header {
-  background: #1976d2;
-  border-radius: 10px 10px 0px 0px;
-  padding: 5px 5px 47px 5px;
-  font-size: 20px;
+/* On mobile */
+@media only screen and (max-width: 479px) {
+  .chatwidget {
+    display: none;
+    width: 100%;
+    right: 0px;
+    height: 100%;
+    bottom: 0%;
+    position: fixed;
+    background: #f7f7f7;
+    border-radius: 0px;
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    outline: 0px;
+    z-index: 999999;
+  }
+
+  .chat_header {
+    background: #1976d2;
+    border-radius: 0px;
+    padding: 5px 5px 47px 5px;
+    font-size: 20px;
+  }
+
+  .chats {
+    clear: both;
+    height: calc(100% - 125px);
+    padding: 2px;
+    border-radius: 1px;
+    overflow-y: scroll;
+    margin-top: 1px;
+    transition: 0.2s;
+  }
+
+  #chat-footer {
+    padding-top: 12.5px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.profile_div {
+  position: fixed;
+  padding: 5px;
+  width: 64px;
+  height: 64px;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 999999;
+  border-radius: 50%;
+}
+
+.imgProfile {
+  box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+  border-radius: 50px;
+  width: 100%;
 }
 
 .chat_header_title {
@@ -28,30 +134,6 @@
   margin-left: 3%;
 }
 
-.chats {
-  /* display: none; */
-  clear: both;
-  height: 385px;
-  padding: 2px;
-  border-radius: 1px;
-  overflow-y: scroll;
-  margin-top: 1px;
-  transition: 0.2s;
-}
-
-div.chats::-webkit-scrollbar {
-  overflow-y: hidden;
-  width: 0px;
-  /* remove scrollbar space /
-    background: transparent;
-    / optional: just make scrollbar invisible */
-}
-
-#chat-footer {
-  padding-top: 12.5px;
-  border-top: 1px solid #ccc;
-  background: #fff;
-}
 .clearfix {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -184,23 +266,6 @@ textarea-webkit-scrollbar {
   font-size: 20px;
   cursor: pointer;
   color: #1976d2;
-}
-
-.imgProfile {
-  box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
-  border-radius: 50px;
-  width: 60%;
-}
-
-.profile_div {
-  /* display: none; */
-  position: fixed;
-  padding: 5px;
-  width: 10%;
-  bottom: 10px;
-  right: 0;
-  cursor: pointer;
-  z-index: 999999;
 }
 
 /* css for dropdown menu of the bot */
