@@ -14,24 +14,7 @@
     box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
     outline: 0px;
     z-index: 999999;
-  }
-
-  #chatWindow {
-    width: 360px !important;
-    background-color: #fff;
-    box-shadow: 1px 1px 12px 1px #8a8a8a;
-    -webkit-box-shadow: 1px 1px 12px 1px #8a8a8a;
-    -moz-box-shadow: 1px 1px 12px 1px #8a8a8a;
-    border-radius: 4px 4px 4px 4px;
-    border: 0px solid #2d99fc !important;
-    font-family: Helvetica, sans-serif;
-    position: fixed;
-    z-index: 9999999 !important;
-    bottom: 0 !important;
-    right: 1% !important;
-    max-width: 98% !important;
-    height: 99%;
-    margin-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   .chat_header {
@@ -43,12 +26,13 @@
 
   .chats {
     clear: both;
-    height: 385px;
+    height: 375px;
     padding: 2px;
     border-radius: 1px;
     overflow-y: scroll;
     margin-top: 1px;
     transition: 0.2s;
+    margin-bottom: 10px;
   }
 
   div.chats::-webkit-scrollbar {
@@ -69,6 +53,7 @@
 /* On mobile */
 @media only screen and (max-width: 479px) {
   .chatwidget {
+    font-family: Arial, Helvetica, sans-serif;
     display: none;
     width: 100%;
     right: 0px;
@@ -161,7 +146,7 @@
   border-radius: 1.5em;
   max-width: 60%;
   min-width: 25%;
-  font-size: 16px;
+  font-size: 15px;
   word-wrap: break-word;
   border-radius: 0 20px 20px 20px;
   white-space: pre-line;
@@ -213,7 +198,7 @@ textarea-webkit-scrollbar {
   background: #1976d2;
   color: white;
   margin-bottom: 0.15em;
-  font-size: 16px;
+  font-size: 15px;
   max-width: 65%;
   min-width: 15%;
   border-radius: 20px 0px 20px 20px;
