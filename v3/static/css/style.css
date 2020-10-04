@@ -147,10 +147,28 @@
   border-radius: 1.5em;
   max-width: 60%;
   min-width: 25%;
-  font-size: 14px;
+  font-size: 16px;
   word-wrap: break-word;
   border-radius: 0 20px 20px 20px;
   white-space: pre-line;
+}
+
+.userMsg {
+  animation: animateElement linear 0.2s;
+  animation-iteration-count: 1;
+  margin-top: 5px;
+  word-wrap: break-word;
+  padding: 10px;
+  float: right;
+  margin-right: 0.85em;
+  background: #1976d2;
+  color: white;
+  margin-bottom: 0.15em;
+  font-size: 16px;
+  max-width: 65%;
+  min-width: 15%;
+  border-radius: 20px 0px 20px 20px;
+  box-shadow: 0px 2px 5px 0px #9a828454;
 }
 
 textarea {
@@ -186,24 +204,6 @@ textarea-webkit-scrollbar {
   /* Firefox 4 - 18 */
   color: #444 !important;
   opacity: 1;
-}
-
-.userMsg {
-  animation: animateElement linear 0.2s;
-  animation-iteration-count: 1;
-  margin-top: 5px;
-  word-wrap: break-word;
-  padding: 10px;
-  float: right;
-  margin-right: 0.85em;
-  background: #1976d2;
-  color: white;
-  margin-bottom: 0.15em;
-  font-size: 14px;
-  max-width: 65%;
-  min-width: 15%;
-  border-radius: 20px 0px 20px 20px;
-  box-shadow: 0px 2px 5px 0px #9a828454;
 }
 
 .userAvatar {
