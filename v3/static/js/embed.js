@@ -198,6 +198,7 @@ setTimeout(() => {
   }
 
   var sendButton = document.getElementById("sendButton");
+
   sendButton.onkeyup = function keyPress(e) {
     wkey = e.which ? e.which : window.event.keyCode;
     if (wkey == 13) pressSend();
@@ -234,7 +235,7 @@ setTimeout(() => {
   };
 
   //Send message function to send message the conversation.
-  addEventListenerById("click", "sendButtonIcon", function (e) {
+  addEventListenerById("click", "sendButton", function (e) {
     var text = document.querySelector(".usrInput").value;
     if (text == "" || text.trim() == "") {
       e.preventDefault();
