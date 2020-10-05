@@ -41,7 +41,7 @@ setTimeout(() => {
       refreshbot +
       '</a><a href="#" role="button" title="Close chat" aria-label="Close chatbot" id="close" style="color: #fff" >' +
       closebot +
-      '</a></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" title="Send message" tabindex="0">' +
+      '</a></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
       '</div> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
       botphoto +
@@ -359,7 +359,7 @@ setTimeout(() => {
           //check if the response contains "text"
           if (response[i].hasOwnProperty("text")) {
             var BotResponse =
-              '<img class="botAvatar" alt="" role=”presentation” src="' +
+              '<img class="botAvatar" alt="" src="' +
               botphoto +
               '"/><p tabindex="0" class="botMsg">' +
               response[i].text +
