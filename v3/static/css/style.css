@@ -109,6 +109,8 @@
   cursor: pointer;
   z-index: 999999;
   border-radius: 50%;
+  background: none;
+  border: none;
 }
 
 .imgProfile {
@@ -252,20 +254,25 @@ textarea-webkit-scrollbar {
   border-radius: 50%;
   display: inline-block;
   float: right;
-  margin-right: 0.85em;
+  margin-right: 25px;
   text-align: center;
   padding: 5px;
   font-size: 20px;
   cursor: pointer;
   color: #1976d2;
+  border: none;
+  background: none;
 }
 
 /* css for dropdown menu of the bot */
 
 #close,
 #restart,
+#minimize,
 #clear {
-  cursor: pointer;
+  /* cursor: pointer;*/
+  background: none;
+  border: none;
 }
 
 .dropdown-trigger {

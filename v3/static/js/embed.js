@@ -35,15 +35,15 @@ setTimeout(() => {
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
-      '</span><span class="dropdown-trigger"><a href="#" title="Minimize chat" role="button" aria-label="Minimize chatbot" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
+      '</span><span class="dropdown-trigger"><button title="Minimize chat" aria-label="Minimize chatbot" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
       minimizebot +
-      '</a><a href="#" role="button" title="Restart chat" aria-label="Restart chatbot" id="restart" style="padding-right: 8px; color: #fff" >' +
+      '</button><button title="Restart chat" aria-label="Restart chatbot" id="restart" style="padding-right: 8px; color: #fff" >' +
       refreshbot +
-      '</a><a href="#" role="button" title="Close chat" aria-label="Close chatbot" id="close" style="color: #fff" >' +
+      '</button><button title="Close chat" aria-label="Close chatbot" id="close" style="color: #fff" >' +
       closebot +
-      '</a></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" title="Send message" tabindex="0">' +
+      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
-      '</div> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
+      '</button> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
       botphoto +
       '"/></div>'
   );
@@ -596,7 +596,7 @@ setTimeout(() => {
     if (wkey == 32) restartchataction();
 
     function restartchataction() {
-      restartConversation();
+      //  restartConversation();
       document.querySelector(".chatwidget").focus();
     }
   };
