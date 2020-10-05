@@ -52,6 +52,18 @@
     border-top: 1px solid #ccc;
     background: #fff;
   }
+
+  .chart-container {
+    position: relative;
+    margin: auto;
+    height: 25vh;
+    width: 20vw;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 5%;
+    background: white;
+    box-shadow: 2px 3px 9px 0px #9a82847a;
+    margin-top: 5px;
+  }
 }
 
 /* On mobile */
@@ -96,6 +108,18 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+  }
+
+  .chart-container {
+    position: relative;
+    margin: auto;
+
+    width: 90%;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 5%;
+    background: white;
+    box-shadow: 2px 3px 9px 0px #9a82847a;
+    margin-top: 5px;
   }
 }
 
@@ -675,6 +699,7 @@ div.content_data::-webkit-scrollbar {
   color: black;
   box-shadow: 2px 3px 9px 0px #9a82842e;
   margin-left: 0.5em;
+  margin-bottom: 15px;
   padding: 10px;
   border-radius: 1.5em;
   max-width: 60%;
@@ -742,18 +767,6 @@ div.content_data::-webkit-scrollbar {
 .modal {
   height: 60%;
   border-radius: 10px;
-}
-
-.chart-container {
-  position: relative;
-  margin: auto;
-  height: 25vh;
-  width: 20vw;
-  border-radius: 10px 10px 10px 10px;
-  margin-left: 5%;
-  background: white;
-  box-shadow: 2px 3px 9px 0px #9a82847a;
-  margin-top: 5px;
 }
 
 /* css for collapsible */
@@ -891,6 +904,7 @@ video:focus {
   border-radius: 10px;
   margin-left: 10%;
   box-shadow: 2px 3px 9px 0px #9a82842e;
+  margin-bottom: 15px;
 }
 
 .pdf_icon {

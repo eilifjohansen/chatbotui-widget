@@ -198,7 +198,6 @@ setTimeout(() => {
   }
 
   var sendButton = document.getElementById("sendButton");
-
   sendButton.onkeyup = function keyPress(e) {
     wkey = e.which ? e.which : window.event.keyCode;
     if (wkey == 13) pressSend();
@@ -279,8 +278,9 @@ setTimeout(() => {
     UserResponse.innerText = message;
 
     document.querySelector(".chats").appendChild(UserResponse);
-    document.querySelector(".chats").innerHTML +=
-      '<div class="clearfix"></div>';
+    document
+      .querySelector(".chats")
+      .insertAdjacentHTML("beforeend", '<div class="clearfix"></div>');
     // fadeElIn("")
 
     document.querySelector(".usrInput").value = "";
@@ -344,38 +344,76 @@ setTimeout(() => {
       if (response.length < 1) {
         //if there is no response from Rasa, send  fallback message to the user
         var fallbackMsg = "I am facing some issues, please try again later!!!";
+        var avatar = document.createElement("img");
+        avatar.classList.add("botAvatar");
+        avatar.src = botphoto;
+        var chatMsg = document.createElement("p");
+        chatMsg.classList.add("botMsg");
+        chatMsg.innerText = fallbackMsg;
 
-        var BotResponse =
-          '<img class="botAvatar" src="' +
-          botphoto +
-          '"/><p  tabindex="0" class="botMsg">' +
-          fallbackMsg +
-          '</p><div class="clearfix"></div>';
-
-        document.querySelector(".chats").innerHTML += BotResponse;
+        document.querySelector(".chats").appendChild(avatar);
+        document.querySelector(".chats").appendChild(chatMsg);
+        document
+          .querySelector(".chats")
+          .insertAdjacentHTML("beforeend", '</p><div class="clearfix"></div>');
+        document
+          .querySelectorAll(".chats .botMsg")
+          [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(1000);
+        document
+          .querySelectorAll(".chats .botAvatar")
+          [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(
+            1000
+          );
       } else {
         //if we get response from Rasa
         for (i = 0; i < response.length; i++) {
           //check if the response contains "text"
           if (response[i].hasOwnProperty("text")) {
-            var BotResponse =
-              '<img class="botAvatar" alt="" src="' +
-              botphoto +
-              '"/><p tabindex="0" class="botMsg">' +
-              response[i].text +
-              '</p><div class="clearfix"></div>';
-            document.querySelector(".chats").innerHTML += BotResponse;
+            var avatar = document.createElement("img");
+            avatar.classList.add("botAvatar");
+            avatar.src = botphoto;
+            var chatMsg = document.createElement("p");
+            chatMsg.classList.add("botMsg");
+            chatMsg.setAttribute("tabindex", "0");
+            chatMsg.innerText = response[i].text;
+
+            document.querySelector(".chats").appendChild(avatar);
+            document.querySelector(".chats").appendChild(chatMsg);
+            document
+              .querySelector(".chats")
+              .insertAdjacentHTML(
+                "beforeend",
+                '</p><div class="clearfix"></div>'
+              );
+            document
+              .querySelectorAll(".chats .botMsg")
+              [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(
+                1000
+              );
+            document
+              .querySelectorAll(".chats .botAvatar")
+              [
+                document.querySelectorAll(".chats .botAvatar").length - 1
+              ].fadeIn(1000);
           }
 
           //check if the response contains "images"
           if (response[i].hasOwnProperty("image")) {
-            var BotResponse =
-              '<div class="singleCard">' +
-              '<img class="imgcard" tabindex="0" src="' +
-              response[i].image +
-              '">' +
-              '</div><div class="clearfix">';
-            document.querySelector(".chats").innerHTML += BotResponse;
+            document
+              .querySelector(".chats")
+              .insertAdjacentHTML(
+                "beforeend",
+                '<div class="singleCard">' +
+                  '<img class="imgcard" tabindex="0" src="' +
+                  response[i].image +
+                  '">' +
+                  '</div><div class="clearfix">'
+              );
+            document
+              .querySelectorAll(".chats .imgcard")
+              [document.querySelectorAll(".chats .imgcard").length - 1].fadeIn(
+                1000
+              );
           }
 
           //check if the response contains "buttons"
@@ -389,11 +427,19 @@ setTimeout(() => {
             if (response[i].attachment.type == "video") {
               video_url = response[i].attachment.payload.src;
 
-              var BotResponse =
-                '<div class="video-container"> <iframe src="' +
-                video_url +
-                '" frameborder="0" allowfullscreen></iframe> </div>';
-              document.querySelector(".chats").innerHTML += BotResponse;
+              document
+                .querySelector(".chats")
+                .insertAdjacentHTML(
+                  "beforeend",
+                  '<div class="video-container"> <iframe src="' +
+                    video_url +
+                    '" frameborder="0" allowfullscreen></iframe> </div>'
+                );
+              document
+                .querySelectorAll(".chats iframe")
+                [document.querySelectorAll(".chats iframe").length - 1].fadeIn(
+                  1000
+                );
             }
           }
 
@@ -484,20 +530,28 @@ setTimeout(() => {
   function renderPdfAttachment(data) {
     pdf_url = data.custom.url;
     pdf_title = data.custom.title;
-    pdf_attachment =
-      '<div class="pdf_attachment">' +
-      '<div class="row">' +
-      '<div class="col s3 pdf_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="#ffffff" width="25" height="25"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2c-.28 0-.5-.22-.5-.5v-5c0-.28.22-.5.5-.5h2c.83 0 1.5.67 1.5 1.5v3zm4-3.75c0 .41-.34.75-.75.75H19v1h.75c.41 0 .75.34.75.75s-.34.75-.75.75H19v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1h1.25c.41 0 .75.34.75.75zM9 9.5h1v-1H9v1zM3 6c-.55 0-1 .45-1 1v13c0 1.1.9 2 2 2h13c.55 0 1-.45 1-1s-.45-1-1-1H5c-.55 0-1-.45-1-1V7c0-.55-.45-1-1-1zm11 5.5h1v-3h-1v3z"/></svg></div>' +
-      '<div class="col s9 pdf_link">' +
-      '<a href="' +
-      pdf_url +
-      '" target="_blank">' +
-      pdf_title +
-      " </a>" +
-      "</div>" +
-      "</div>" +
-      "</div>";
-    document.querySelector(".chats").innerHTML += pdf_attachment;
+    document
+      .querySelector(".chats")
+      .insertAdjacentHTML(
+        "beforeend",
+        '<div class="pdf_attachment">' +
+          '<div class="row">' +
+          '<div class="col s3 pdf_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="#ffffff" width="25" height="25"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2c-.28 0-.5-.22-.5-.5v-5c0-.28.22-.5.5-.5h2c.83 0 1.5.67 1.5 1.5v3zm4-3.75c0 .41-.34.75-.75.75H19v1h.75c.41 0 .75.34.75.75s-.34.75-.75.75H19v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1h1.25c.41 0 .75.34.75.75zM9 9.5h1v-1H9v1zM3 6c-.55 0-1 .45-1 1v13c0 1.1.9 2 2 2h13c.55 0 1-.45 1-1s-.45-1-1-1H5c-.55 0-1-.45-1-1V7c0-.55-.45-1-1-1zm11 5.5h1v-3h-1v3z"/></svg></div>' +
+          '<div class="col s9 pdf_link">' +
+          '<a href="' +
+          pdf_url +
+          '" target="_blank">' +
+          pdf_title +
+          " </a>" +
+          "</div>" +
+          "</div>" +
+          "</div><div class='clearfix'></div>"
+      );
+    document
+      .querySelectorAll(".chats .pdf_attachment")
+      [document.querySelectorAll(".chats .pdf_attachment").length - 1].fadeIn(
+        1000
+      );
     scrollToBottomOfResults();
   }
 
@@ -509,20 +563,31 @@ setTimeout(() => {
       options +=
         '<option value="' + data[i].value + '">' + data[i].label + "</option>";
     }
-    var select =
-      '<div class="dropDownMsg"><select class="browser-default dropDownSelect"> <option value="" disabled selected>Choose your option</option>' +
-      options +
-      "</select></div>";
-    document.querySelector(".chats").innerHTML += select;
+
+    document
+      .querySelector(".chats")
+      .insertAdjacentHTML(
+        "beforeend",
+        '<div class="dropDownMsg"><select class="browser-default dropDownSelect"> <option value="" disabled selected>Choose your option</option>' +
+          options +
+          "</select></div><div class='clearfix'></div>"
+      );
+    document
+      .querySelectorAll(".chats .dropDownMsg")
+      [document.querySelectorAll(".chats .dropDownMsg").length - 1].fadeIn(
+        1000
+      );
     scrollToBottomOfResults();
 
     //add event handler if user selects a option.
-    document.querySelector("select").addEventListener("change", function () {
+    document.querySelector("select").addEventListener("change", function (e) {
       var value = "";
       var label = "";
       document
-        .querySelectorAll("select option:selected")
+        .querySelectorAll("select option:checked")
         .forEach(function (element) {
+          console.log("V: ", value);
+          console.log("L: ", label);
           label += element.innerText;
           value += element.value;
         });
@@ -541,18 +606,26 @@ setTimeout(() => {
       var suggestions = textToAdd;
       var suggLength = textToAdd.length;
 
-      document.querySelector(".chats").innerHTML +=
-        ' <div class="singleCard"> <div class="suggestions"><div class="menu"></div></div></diV>';
+      document
+        .querySelector(".chats")
+        .insertAdjacentHTML(
+          "beforeend",
+          ' <div class="singleCard"> <div class="suggestions"><div class="menu"></div></div></diV>'
+        );
       // Loop through suggestions
       for (i = 0; i < suggLength; i++) {
-        document.querySelector(".menu").innerHTML +=
-          '<div tabindex="0" style="background: ' +
-          botcolor +
-          '" role="button" class="menuChips" data-payload=\'' +
-          suggestions[i].payload +
-          "'>" +
-          suggestions[i].title +
-          "</div>";
+        document
+          .querySelector(".menu")
+          .insertAdjacentHTML(
+            "beforeend",
+            '<div tabindex="0" style="background: ' +
+              botcolor +
+              '" class="menuChips" data-payload=\'' +
+              suggestions[i].payload +
+              "'>" +
+              suggestions[i].title +
+              "</div>"
+          );
       }
       scrollToBottomOfResults();
     }, 1000);
@@ -598,7 +671,7 @@ setTimeout(() => {
     if (wkey == 32) restartchataction();
 
     function restartchataction() {
-      //  restartConversation();
+      restartConversation();
       document.querySelector(".chatwidget").focus();
     }
   };
@@ -610,7 +683,7 @@ setTimeout(() => {
     });
   }
 
-  /*close function to close the chatwidget.
+  //close function to close the chatwidget.
   addEventListenerById("click", "closeIcon", function () {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
@@ -624,26 +697,6 @@ setTimeout(() => {
     if (wkey == 32) closechataction();
 
     function closechataction() {
-      toggleVisibility(".chatwidget");
-      toggleVisibility(".profile_div");
-      scrollToBottomOfResults();
-    }
-  };*/
-
-  //close function to minimize the chatwidget.
-  document.querySelector("#close").addEventListener("click", function () {
-    toggleVisibility(".chatwidget");
-    toggleVisibility(".profile_div");
-    scrollToBottomOfResults();
-  });
-
-  var minimizechataction = document.getElementById("close");
-  minimizechataction.onkeyup = function keyPress(e) {
-    wkey = e.which ? e.which : window.event.keyCode;
-    if (wkey == 13) minimizechataction();
-    if (wkey == 32) minimizechataction();
-
-    function minimizechataction() {
       toggleVisibility(".chatwidget");
       toggleVisibility(".profile_div");
       scrollToBottomOfResults();
@@ -675,22 +728,16 @@ setTimeout(() => {
   function showCardsCarousel(cardsToAdd) {
     var cards = createCardsCarousel(cardsToAdd);
 
-    document.querySelector(".chats").innerHTML += cards;
+    document.querySelector(".chats").insertAdjacentHTML("beforeend", cards);
+    toggleVisibility("#paginated_cards");
 
-    // if (cardsToAdd.length <= 2) {
-    //   $(".cards_scroller>div.carousel_cards:nth-of-type(" + i + ")").fadeIn(
-    //     3000
-    //   );
-    // } else {
-    //   for (var i = 0; i < cardsToAdd.length; i++) {
-    //     $(".cards_scroller>div.carousel_cards:nth-of-type(" + i + ")").fadeIn(
-    //       3000
-    //     );
-    //   }
-    //   $(".cards .arrow.prev").fadeIn("3000");
-    //   $(".cards .arrow.next").fadeIn("3000");
-    // }
-
+    if (cardsToAdd.length >= 2) {
+      document.querySelector(".cards .arrow.prev").fadeIn(3000);
+      document.querySelector(".cards .arrow.next").fadeIn(3000);
+    }
+    document
+      .querySelectorAll(".chats .cards")
+      [document.querySelectorAll(".chats .cards").length - 1].fadeIn(1000);
     scrollToBottomOfResults();
 
     const card = document.querySelector("#paginated_cards");
@@ -767,11 +814,19 @@ setTimeout(() => {
       chips += chip;
     }
 
-    var quickReplies =
-      '<div class="quickReplies">' +
-      chips +
-      '</div><div class="clearfix"></div>';
-    document.querySelector(".chats").innerHTML += quickReplies;
+    document
+      .querySelector(".chats")
+      .insertAdjacentHTML(
+        "beforeend",
+        '<div class="quickReplies">' +
+          chips +
+          '</div><div class="clearfix"></div>'
+      );
+    document
+      .querySelectorAll(".chats .quickReplies")
+      [document.querySelectorAll(".chats .quickReplies").length - 1].fadeIn(
+        1000
+      );
     scrollToBottomOfResults();
     const slider = document.querySelector(".quickReplies");
     let isDown = false;
@@ -803,19 +858,6 @@ setTimeout(() => {
 
   // on click of quickreplies, get the value and send to rasa
   addEventListenerByClass("click", "chip", function (e) {
-    var text = e.target.innerText;
-    var payload = e.target.getAttribute("data-payload");
-    console.log("chip payload: ", e.target.getAttribute("data-payload"));
-    setUserResponse(text);
-    send(payload);
-
-    //delete the quickreplies
-    if (document.querySelector(".quickReplies"))
-      document.querySelector(".quickReplies").remove();
-  });
-
-  // on KEYPRESS of quickreplies, get the value and send to rasa
-  addEventListenerByClass("keypress", "chip", function (e) {
     var text = e.target.innerText;
     var payload = e.target.getAttribute("data-payload");
     console.log("chip payload: ", e.target.getAttribute("data-payload"));
@@ -884,15 +926,18 @@ setTimeout(() => {
 
   //======================================bot typing animation ======================================
   function showBotTyping() {
-    var botTyping =
-      '<img class="botAvatar" id="botAvatar" src="' +
-      botphoto +
-      '"/><div class="botTyping">' +
-      '<div class="bounce1"></div>' +
-      '<div class="bounce2"></div>' +
-      '<div class="bounce3"></div>' +
-      "</div>";
-    document.querySelector(".chats").innerHTML += botTyping;
+    document
+      .querySelector(".chats")
+      .insertAdjacentHTML(
+        "beforeend",
+        '<img class="botAvatar" id="botAvatar" src="' +
+          botphoto +
+          '"/><div class="botTyping">' +
+          '<div class="bounce1"></div>' +
+          '<div class="bounce2"></div>' +
+          '<div class="bounce3"></div>' +
+          "</div>"
+      );
     document.querySelector(".botTyping").style.display = "";
     scrollToBottomOfResults();
   }
@@ -918,7 +963,7 @@ setTimeout(() => {
         '<div tabindex="0" class="collapsible-header">' +
         data[i].title +
         "</div>" +
-        '<div tabindex="0" class="collapsible-body"><span>' +
+        '<div class="collapsible-body" style="padding:0 14px;overflow:hidden;max-height:0;transition:all 0.2s"><span>' +
         data[i].description +
         "</span></div>" +
         "</li>";
@@ -926,9 +971,42 @@ setTimeout(() => {
     }
     var contents = '<ul class="collapsible">' + list + "</uL>";
     document.querySelector(".chats").innerHTML += contents;
+    document
+      .querySelectorAll(".chats .botMsg")
+      [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
+    document
+      .querySelectorAll(".chats .botAvatar")
+      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
 
     // initialize the collapsible
-    // $(".collapsible").collapsible();
+    let collapsibles = document.querySelectorAll(".collapsible-header");
+
+    for (let i = 0; i < collapsibles.length; i++) {
+      collapsibles[i].addEventListener("click", function () {
+        var $this = this;
+        document.querySelectorAll(".collapsible-header").forEach(function (el) {
+          if ($this === el) return;
+          el.classList.remove("active");
+          el.nextElementSibling.style.maxHeight = "0px";
+          setTimeout(() => {
+            el.nextElementSibling.style.display = "none";
+          }, 200);
+        });
+
+        this.classList.toggle("active");
+
+        let content = this.nextElementSibling;
+        if (this.classList.contains("active")) {
+          content.style.display = "block";
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = "0px";
+          setTimeout(() => {
+            content.style.display = "none";
+          }, 200);
+        }
+      });
+    }
     scrollToBottomOfResults();
   }
 
@@ -946,8 +1024,14 @@ setTimeout(() => {
     //create the ".chart-container" div that will render the charts in canvas as required by charts.js,
     // for more info. refer: https://www.chartjs.org/docs/latest/getting-started/usage.html
     var html =
-      '<div class="chart-container"> <span class="modal-trigger" id="expand" title="expand" href="#modal1"><i class="fa fa-external-link" aria-hidden="true"></i></span> <canvas id="chat-chart" ></canvas> </div> <div class="clearfix"></div>';
+      '<div class="chart-container"> <!--<span class="modal-trigger" id="expand" title="expand" href="#modal1"><i class="fa fa-external-link" aria-hidden="true"></i></span>--> <canvas id="chat-chart" ></canvas> </div> <div class="clearfix"></div>';
     document.querySelector(".chats").innerHTML += html;
+    document
+      .querySelectorAll(".chats .botMsg")
+      [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
+    document
+      .querySelectorAll(".chats .botAvatar")
+      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
 
     //create the context that will draw the charts over the canvas in the ".chart-container" div
     var ctx = document.getElementById("chat-chart");
@@ -1085,6 +1169,52 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function () {
     if (this[i] && this[i].parentElement) {
       this[i].parentElement.removeChild(this[i]);
     }
+  }
+};
+Element.prototype.fadeIn = function (ms) {
+  let el = this;
+  el.style.opacity = 0;
+  el.style.filter = "alpha(opacity=0)";
+  el.style.display = "inline-block";
+  el.style.visibility = "visible";
+
+  if (ms) {
+    var opacity = 0;
+    var timer = setInterval(function () {
+      opacity += 50 / ms;
+      if (opacity >= 1) {
+        clearInterval(timer);
+        opacity = 1;
+      }
+      el.style.opacity = opacity;
+      el.style.filter = "alpha(opacity=" + opacity * 100 + ")";
+    }, 50);
+  } else {
+    el.style.opacity = 1;
+    el.style.filter = "alpha(opacity=1)";
+  }
+};
+
+Element.prototype.fadeOut = function (ms) {
+  let el = this;
+  if (ms) {
+    var opacity = 1;
+    var timer = setInterval(function () {
+      opacity -= 50 / ms;
+      if (opacity <= 0) {
+        clearInterval(timer);
+        opacity = 0;
+        el.style.display = "none";
+        el.style.visibility = "hidden";
+      }
+      el.style.opacity = opacity;
+      el.style.filter = "alpha(opacity=" + opacity * 100 + ")";
+    }, 50);
+  } else {
+    el.style.opacity = 0;
+    el.style.filter = "alpha(opacity=0)";
+    el.style.display = "none";
+    el.style.visibility = "hidden";
   }
 };
 
