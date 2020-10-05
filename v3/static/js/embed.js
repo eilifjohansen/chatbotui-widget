@@ -41,9 +41,9 @@ setTimeout(() => {
       refreshbot +
       '</button><button title="Close chat" aria-label="Close chatbot" id="close" style="color: #fff" >' +
       closebot +
-      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
+      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
-      '</button> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
+      '</div> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
       botphoto +
       '"/></div>'
   );
@@ -546,7 +546,9 @@ setTimeout(() => {
       // Loop through suggestions
       for (i = 0; i < suggLength; i++) {
         document.querySelector(".menu").innerHTML +=
-          '<div tabindex="0" role="button" class="menuChips" data-payload=\'' +
+          '<div tabindex="0" style="background: ' +
+          botcolor +
+          '" role="button" class="menuChips" data-payload=\'' +
           suggestions[i].payload +
           "'>" +
           suggestions[i].title +
