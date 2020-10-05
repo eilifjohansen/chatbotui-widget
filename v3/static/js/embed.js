@@ -608,7 +608,7 @@ setTimeout(() => {
     });
   }
 
-  //close function to close the chatwidget.
+  /*close function to close the chatwidget.
   addEventListenerById("click", "closeIcon", function () {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
@@ -622,6 +622,26 @@ setTimeout(() => {
     if (wkey == 32) closechataction();
 
     function closechataction() {
+      toggleVisibility(".chatwidget");
+      toggleVisibility(".profile_div");
+      scrollToBottomOfResults();
+    }
+  };*/
+
+  //close function to minimize the chatwidget.
+  document.querySelector("#close").addEventListener("click", function () {
+    toggleVisibility(".chatwidget");
+    toggleVisibility(".profile_div");
+    scrollToBottomOfResults();
+  });
+
+  var minimizechataction = document.getElementById("close");
+  minimizechataction.onkeyup = function keyPress(e) {
+    wkey = e.which ? e.which : window.event.keyCode;
+    if (wkey == 13) minimizechataction();
+    if (wkey == 32) minimizechataction();
+
+    function minimizechataction() {
       toggleVisibility(".chatwidget");
       toggleVisibility(".profile_div");
       scrollToBottomOfResults();
