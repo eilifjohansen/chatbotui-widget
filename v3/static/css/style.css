@@ -35,12 +35,16 @@
     margin-bottom: 10px;
   }
 
-  div.chats::-webkit-scrollbar {
+  /* div.chats::-webkit-scrollbar {
     overflow-y: hidden;
-    width: 0px;
+    width: 0px;'/
     /* remove scrollbar space /
     background: transparent;
     / optional: just make scrollbar invisible */
+  /*}*/
+
+  div.chats {
+    overflow-x: hidden;
   }
 
   #chat-footer {
@@ -174,7 +178,9 @@
 textarea {
   box-shadow: none;
   resize: none;
-  outline: none;
+  /*outline: none;*/
+  padding-left: 5px !important;
+  box-sizing: border-box;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -220,7 +226,7 @@ textarea-webkit-scrollbar {
 .usrInput {
   padding: 0.5em;
   width: 80%;
-  margin-left: 4%;
+  margin-left: 10px;
   border: 0;
   padding-left: 0px;
   height: 40px;

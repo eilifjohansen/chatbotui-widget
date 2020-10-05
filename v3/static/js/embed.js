@@ -35,15 +35,15 @@ setTimeout(() => {
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
-      '</span><span class="dropdown-trigger"><a href="#" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
+      '</span><span class="dropdown-trigger"><a href="#" title="Minimize chat" role="button" aria-label="Minimize chatbot" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
       minimizebot +
-      '</a><a href="#" id="restart" style="padding-right: 8px; color: #fff" >' +
+      '</a><a href="#" role="button" title="Restart chat" aria-label="Restart chatbot" id="restart" style="padding-right: 8px; color: #fff" >' +
       refreshbot +
-      '</a><a href="#" id="close" style="color: #fff" >' +
+      '</a><a href="#" role="button" title="Close chat" aria-label="Close chatbot" id="close" style="color: #fff" >' +
       closebot +
-      '</a></span></div><div class="chats" id="chats"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" tabindex="0">' +
+      '</a></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
-      '</div> </div></div></div><div class="profile_div" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
+      '</div> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
       botphoto +
       '"/></div>'
   );
@@ -273,6 +273,7 @@ setTimeout(() => {
   function setUserResponse(message) {
     var UserResponse = document.createElement("p");
     UserResponse.classList.add("userMsg");
+    UserResponse.setAttribute("tabindex", "0");
     UserResponse.style.background = botcolor;
     UserResponse.innerText = message;
 
@@ -346,7 +347,7 @@ setTimeout(() => {
         var BotResponse =
           '<img class="botAvatar" src="' +
           botphoto +
-          '"/><p class="botMsg">' +
+          '"/><p  tabindex="0" class="botMsg">' +
           fallbackMsg +
           '</p><div class="clearfix"></div>';
 
@@ -359,7 +360,7 @@ setTimeout(() => {
             var BotResponse =
               '<img class="botAvatar" alt="" role=”presentation” src="' +
               botphoto +
-              '"/><p tabindex="0" aria-live="polite" class="botMsg">' +
+              '"/><p tabindex="0" class="botMsg">' +
               response[i].text +
               '</p><div class="clearfix"></div>';
             document.querySelector(".chats").innerHTML += BotResponse;
@@ -369,7 +370,7 @@ setTimeout(() => {
           if (response[i].hasOwnProperty("image")) {
             var BotResponse =
               '<div class="singleCard">' +
-              '<img class="imgcard" src="' +
+              '<img class="imgcard" tabindex="0" src="' +
               response[i].image +
               '">' +
               '</div><div class="clearfix">';
@@ -544,7 +545,7 @@ setTimeout(() => {
       // Loop through suggestions
       for (i = 0; i < suggLength; i++) {
         document.querySelector(".menu").innerHTML +=
-          '<div class="menuChips" data-payload=\'' +
+          '<div tabindex="0" role="button" class="menuChips" data-payload=\'' +
           suggestions[i].payload +
           "'>" +
           suggestions[i].title +
@@ -556,6 +557,19 @@ setTimeout(() => {
 
   // on click of suggestions, get the value and send to rasa
   addEventListenerByClass("click", "menuChips", function (e) {
+    var text = e.target.innerText;
+    var payload = e.target.getAttribute("data-payload");
+    console.log("payload: ", e.target.getAttribute("data-payload"));
+    setUserResponse(text);
+    send(payload);
+
+    //delete the suggestions once user click on it
+    if (document.querySelector(".suggestions"))
+      document.querySelector(".suggestions").remove();
+  });
+
+  // on keypress of suggestions, get the value and send to rasa
+  addEventListenerByClass("keypress", "menuChips", function (e) {
     var text = e.target.innerText;
     var payload = e.target.getAttribute("data-payload");
     console.log("payload: ", e.target.getAttribute("data-payload"));
@@ -722,7 +736,7 @@ setTimeout(() => {
     var chips = "";
     for (i = 0; i < quickRepliesData.length; i++) {
       var chip =
-        '<div class="chip" data-payload=\'' +
+        '<div class="chip" tabindex="0" data-payload=\'' +
         quickRepliesData[i].payload +
         "'>" +
         quickRepliesData[i].title +
@@ -766,6 +780,19 @@ setTimeout(() => {
 
   // on click of quickreplies, get the value and send to rasa
   addEventListenerByClass("click", "chip", function (e) {
+    var text = e.target.innerText;
+    var payload = e.target.getAttribute("data-payload");
+    console.log("chip payload: ", e.target.getAttribute("data-payload"));
+    setUserResponse(text);
+    send(payload);
+
+    //delete the quickreplies
+    if (document.querySelector(".quickReplies"))
+      document.querySelector(".quickReplies").remove();
+  });
+
+  // on KEYPRESS of quickreplies, get the value and send to rasa
+  addEventListenerByClass("keypress", "chip", function (e) {
     var text = e.target.innerText;
     var payload = e.target.getAttribute("data-payload");
     console.log("chip payload: ", e.target.getAttribute("data-payload"));
@@ -865,10 +892,10 @@ setTimeout(() => {
     for (i = 0; i < data.length; i++) {
       item =
         "<li>" +
-        '<div class="collapsible-header">' +
+        '<div tabindex="0" class="collapsible-header">' +
         data[i].title +
         "</div>" +
-        '<div class="collapsible-body"><span>' +
+        '<div tabindex="0" class="collapsible-body"><span>' +
         data[i].description +
         "</span></div>" +
         "</li>";
