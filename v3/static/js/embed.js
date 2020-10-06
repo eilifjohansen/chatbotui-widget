@@ -281,6 +281,7 @@ setTimeout(() => {
         var avatar = document.createElement("img");
         avatar.classList.add("botAvatar");
         avatar.src = botphoto;
+        avatar.alt = "";
         var chatMsg = document.createElement("p");
         chatMsg.classList.add("botMsg");
         chatMsg.innerText = fallbackMsg;
@@ -306,6 +307,7 @@ setTimeout(() => {
             var avatar = document.createElement("img");
             avatar.classList.add("botAvatar");
             avatar.src = botphoto;
+            avatar.alt = "";
             var chatMsg = document.createElement("p");
             chatMsg.classList.add("botMsg");
             chatMsg.setAttribute("tabindex", "0");
