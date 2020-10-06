@@ -463,6 +463,7 @@ setTimeout(() => {
   document.querySelector("#profile_div").addEventListener("click", function () {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
+    document.querySelector(".chatwidget").focus();
   });
 
   //====================================== Render Pdf attachment =======================================

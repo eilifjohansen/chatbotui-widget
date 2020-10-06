@@ -134,6 +134,7 @@
   z-index: 999999;
   border-radius: 50%;
   background: none;
+  background-color: none;
   border: none;
 }
 
