@@ -41,9 +41,9 @@ setTimeout(() => {
       refreshbot +
       '</button><button title="Close chat" aria-label="Close chatbot" id="close" style="color: #fff" >' +
       closebot +
-      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <div id="sendButton" title="Send message" tabindex="0">' +
+      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
-      '</div> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
+      '</button> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="open chat" src = "' +
       botphoto +
       '"/></div>'
   );
@@ -196,72 +196,6 @@ setTimeout(() => {
       }
     }
   }
-
-  var sendButton = document.getElementById("sendButton");
-  sendButton.onkeyup = function keyPress(e) {
-    wkey = e.which ? e.which : window.event.keyCode;
-    if (wkey == 13) pressSend();
-    if (wkey == 32) pressSend();
-
-    function pressSend() {
-      var text = document.querySelector(".usrInput").value;
-      if (text == "" || text.trim() == "") {
-        e.preventDefault();
-        return false;
-      } else {
-        //destroy the existing chart
-
-        /* chatChart.destroy();
-      $(".chart-container").remove();
-      if (typeof modalChart !== "undefined") {
-        modalChart.destroy();
-      }*/
-
-        if (document.querySelector("#paginated_cards"))
-          document.querySelector("#paginated_cards").remove();
-        if (document.querySelector(".suggestions"))
-          document.querySelector(".suggestions").remove();
-        if (document.querySelector(".quickReplies"))
-          document.querySelector(".quickReplies").remove();
-
-        document.querySelector(".usrInput").blur();
-        setUserResponse(text);
-        send(text);
-        e.preventDefault();
-        return false;
-      }
-    }
-  };
-
-  //Send message function to send message the conversation.
-  addEventListenerById("click", "sendButton", function (e) {
-    var text = document.querySelector(".usrInput").value;
-    if (text == "" || text.trim() == "") {
-      e.preventDefault();
-      return false;
-    } else {
-      //destroy the existing chart
-
-      /* chatChart.destroy();
-      $(".chart-container").remove();
-      if (typeof modalChart !== "undefined") {
-        modalChart.destroy();
-      }*/
-
-      if (document.querySelector("#paginated_cards"))
-        document.querySelector("#paginated_cards").remove();
-      if (document.querySelector(".suggestions"))
-        document.querySelector(".suggestions").remove();
-      if (document.querySelector(".quickReplies"))
-        document.querySelector(".quickReplies").remove();
-
-      document.querySelector(".usrInput").blur();
-      setUserResponse(text);
-      send(text);
-      e.preventDefault();
-      return false;
-    }
-  });
 
   //==================================== Set user response =====================================
   /*    
@@ -722,6 +656,34 @@ setTimeout(() => {
       scrollToBottomOfResults();
     }
   };
+
+  //Send message function to send message the conversation.
+  document.querySelector("#sendButton").addEventListener("click", function () {
+    var text = document.querySelector(".usrInput").value;
+    if (text == "" || text.trim() == "") {
+      return false;
+    } else {
+      //destroy the existing chart
+
+      /* chatChart.destroy();
+      $(".chart-container").remove();
+      if (typeof modalChart !== "undefined") {
+        modalChart.destroy();
+      }*/
+
+      if (document.querySelector("#paginated_cards"))
+        document.querySelector("#paginated_cards").remove();
+      if (document.querySelector(".suggestions"))
+        document.querySelector(".suggestions").remove();
+      if (document.querySelector(".quickReplies"))
+        document.querySelector(".quickReplies").remove();
+
+      document.querySelector(".usrInput").blur();
+      setUserResponse(text);
+      send(text);
+      return false;
+    }
+  });
 
   //====================================== Cards Carousel =========================================
 
