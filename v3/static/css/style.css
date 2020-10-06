@@ -292,11 +292,6 @@ textarea-webkit-scrollbar {
   background: #f2f2f2;
 }
 
-#sendButtonIcon:active,
-#sendButtonIcon:focus {
-  outline: none;
-}
-
 #userInput:hover {
   background: #f2f2f2;
 }
@@ -318,7 +313,7 @@ textarea-webkit-scrollbar {
 #minimize:hover,
 #close:hover,
 #restart:hover {
-  outline: 1px solid white;
+  background: #000;
 }
 
 /* css for dropdown menu of the bot */
