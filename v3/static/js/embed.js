@@ -842,6 +842,19 @@ setTimeout(() => {
       document.querySelector(".quickReplies").remove();
   });
 
+  // on click of quickreplies, get the value and send to Chatbot
+  addEventListenerByClass("keypress", "chip", function (e) {
+    var text = e.target.innerText;
+    var payload = e.target.getAttribute("data-payload");
+    console.log("chip payload: ", e.target.getAttribute("data-payload"));
+    setUserResponse(text);
+    send(payload);
+
+    //delete the quickreplies
+    if (document.querySelector(".quickReplies"))
+      document.querySelector(".quickReplies").remove();
+  });
+
   //====================================== Get User Location ==================================================
   function getLocation() {
     if (navigator.geolocation) {
