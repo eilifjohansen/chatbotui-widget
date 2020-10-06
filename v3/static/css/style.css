@@ -292,6 +292,7 @@ textarea-webkit-scrollbar {
   outline: 1px solid black;
 }
 
+#sendButtonIcon:active,
 #sendButtonIcon:active {
   outline: none;
 }
