@@ -273,11 +273,11 @@ textarea-webkit-scrollbar {
 
 #sendButton {
   height: 30px;
-  width: 20px;
+  width: 25px;
   border-radius: 50%;
   display: inline-block;
   float: right;
-  margin-right: 30px;
+  margin-right: 25px;
   text-align: center;
   padding: 5px;
   font-size: 20px;
