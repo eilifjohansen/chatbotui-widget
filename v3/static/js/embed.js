@@ -31,7 +31,9 @@ function loadjscssfile(filename, filetype) {
 setTimeout(() => {
   document.body.insertAdjacentHTML(
     "beforeEnd",
-    '<div class="chatwidget" tabindex="-1" id="chatwidget"><div class="chat_header" style="background: ' +
+    '<button class="profile_div" title="Start chat" id="profile_div" tabindex="0"><img class="imgProfile" alt="" src = "' +
+      botphoto +
+      '"/></button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background: ' +
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
@@ -43,9 +45,7 @@ setTimeout(() => {
       closebot +
       '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
-      '</button> </div></div></div><div class="profile_div" title="Start chat" id="profile_div" role="button" tabindex="0"><img class="imgProfile" alt="" src = "' +
-      botphoto +
-      '"/></div>'
+      "</button> </div></div></div>"
   );
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -736,7 +736,7 @@ setTimeout(() => {
       ratings = Math.round((cardsData[i].ratings / 5) * 100) + "%";
       data = cardsData[i];
       item =
-        '<div class="carousel_cards in-left">' +
+        '<div tabindex="0" class="carousel_cards in-left">' +
         '<img class="cardBackgroundImage" src="' +
         cardsData[i].image +
         '"><div class="cardFooter">' +
@@ -949,6 +949,31 @@ setTimeout(() => {
 
     for (let i = 0; i < collapsibles.length; i++) {
       collapsibles[i].addEventListener("click", function () {
+        var $this = this;
+        document.querySelectorAll(".collapsible-header").forEach(function (el) {
+          if ($this === el) return;
+          el.classList.remove("active");
+          el.nextElementSibling.style.maxHeight = "0px";
+          setTimeout(() => {
+            el.nextElementSibling.style.display = "none";
+          }, 200);
+        });
+
+        this.classList.toggle("active");
+
+        let content = this.nextElementSibling;
+        if (this.classList.contains("active")) {
+          content.style.display = "block";
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = "0px";
+          setTimeout(() => {
+            content.style.display = "none";
+          }, 200);
+        }
+      });
+
+      collapsibles[i].addEventListener("keypress", function () {
         var $this = this;
         document.querySelectorAll(".collapsible-header").forEach(function (el) {
           if ($this === el) return;
