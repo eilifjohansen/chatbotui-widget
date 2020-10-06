@@ -674,6 +674,9 @@ setTimeout(() => {
         modalChart.destroy();
       }*/
 
+      if (document.querySelector(".chart-container"))
+        document.querySelector(".chart-container").remove();
+
       if (document.querySelector("#paginated_cards"))
         document.querySelector("#paginated_cards").remove();
       if (document.querySelector(".suggestions"))
