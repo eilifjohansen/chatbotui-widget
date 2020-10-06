@@ -131,7 +131,7 @@ setTimeout(() => {
       }),
     })
       .then(function (r) {
-        console.log("Response from Rasa");
+        console.log("Response from Chatbot");
         console.log("Status: ", r.status);
         return r.json();
       })
@@ -230,7 +230,7 @@ setTimeout(() => {
     terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
   }
 
-  //============== send the user message to rasa server =============================================
+  //============== send the user message to Chatbot server =============================================
   function send(message) {
     fetch(webhook, {
       method: "POST",
@@ -240,7 +240,7 @@ setTimeout(() => {
       body: JSON.stringify({ message: message, sender: user_id }),
     })
       .then(function (r) {
-        console.log("Response from Rasa");
+        console.log("Response from Chatbot");
         console.log("Status: ", r.status);
         return r.json();
       })
@@ -264,7 +264,7 @@ setTimeout(() => {
           // return;
         }
 
-        // if there is no response from rasa server
+        // if there is no response from Chatbot server
         console.log("Error from bot end: ", error);
         setBotResponse("");
       });
@@ -276,7 +276,7 @@ setTimeout(() => {
     setTimeout(function () {
       hideBotTyping();
       if (response.length < 1) {
-        //if there is no response from Rasa, send  fallback message to the user
+        //if there is no response from Chatbot, send  fallback message to the user
         var fallbackMsg = "I am facing some issues, please try again later!!!";
         var avatar = document.createElement("img");
         avatar.classList.add("botAvatar");
@@ -300,7 +300,7 @@ setTimeout(() => {
             1000
           );
       } else {
-        //if we get response from Rasa
+        //if we get response from Chatbot
         for (i = 0; i < response.length; i++) {
           //check if the response contains "text"
           if (response[i].hasOwnProperty("text")) {
@@ -567,7 +567,7 @@ setTimeout(() => {
     }, 1000);
   }
 
-  // on click of suggestions, get the value and send to rasa
+  // on click of suggestions, get the value and send to Chatbot
   addEventListenerByClass("click", "menuChips", function (e) {
     var text = e.target.innerText;
     var payload = e.target.getAttribute("data-payload");
@@ -580,7 +580,7 @@ setTimeout(() => {
       document.querySelector(".suggestions").remove();
   });
 
-  // on keypress of suggestions, get the value and send to rasa
+  // on keypress of suggestions, get the value and send to Chatbot
   addEventListenerByClass("keypress", "menuChips", function (e) {
     var text = e.target.innerText;
     var payload = e.target.getAttribute("data-payload");
@@ -620,7 +620,7 @@ setTimeout(() => {
   }
 
   //close function to close the chatwidget.
-  addEventListenerById("click", "closeIcon", function () {
+  document.querySelector("#close").addEventListener("click", function () {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
@@ -820,7 +820,7 @@ setTimeout(() => {
     });
   }
 
-  // on click of quickreplies, get the value and send to rasa
+  // on click of quickreplies, get the value and send to Chatbot
   addEventListenerByClass("click", "chip", function (e) {
     var text = e.target.innerText;
     var payload = e.target.getAttribute("data-payload");
@@ -1048,7 +1048,7 @@ setTimeout(() => {
 
   // on click of expand button, get the chart data from gloabl variable & render it to modal
   addEventListenerById("click", "expand", function () {
-    //the parameters are declared gloabally while we get the charts data from rasa.
+    //the parameters are declared gloabally while we get the charts data from Chatbot.
     createChartinModal(
       title,
       labels,
