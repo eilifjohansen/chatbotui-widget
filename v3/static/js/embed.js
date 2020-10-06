@@ -37,9 +37,9 @@ setTimeout(() => {
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
-      '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
+      '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 0px; style="color: #fff" >' +
       minimizebot +
-      '</button><button title="Restart chat" id="restart" style="padding-right: 8px; color: #fff" >' +
+      '</button><button title="Restart chat" id="restart" style="padding-right: 3px; color: #fff" >' +
       refreshbot +
       '</button><button title="Close chat" id="close" style="color: #fff" >' +
       closebot +
