@@ -187,6 +187,8 @@ setTimeout(() => {
           document.querySelector(".suggestions").remove();
         if (document.querySelector(".quickReplies"))
           document.querySelector(".quickReplies").remove();
+        if (document.querySelector(".dropDownMsg"))
+          document.querySelector(".dropDownMsg").remove();
 
         // document.querySelector(".usrInput").blur();
         setUserResponse(text);
@@ -294,11 +296,11 @@ setTimeout(() => {
           .insertAdjacentHTML("beforeend", '</p><div class="clearfix"></div>');
         document
           .querySelectorAll(".chats .botMsg")
-          [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(1000);
+          [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(300);
         document
           .querySelectorAll(".chats .botAvatar")
           [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(
-            1000
+            300
           );
       } else {
         //if we get response from Chatbot
@@ -325,13 +327,13 @@ setTimeout(() => {
             document
               .querySelectorAll(".chats .botMsg")
               [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(
-                1000
+                300
               );
             document
               .querySelectorAll(".chats .botAvatar")
               [
                 document.querySelectorAll(".chats .botAvatar").length - 1
-              ].fadeIn(1000);
+              ].fadeIn(300);
           }
 
           //check if the response contains "images"
@@ -349,7 +351,7 @@ setTimeout(() => {
             document
               .querySelectorAll(".chats .imgcard")
               [document.querySelectorAll(".chats .imgcard").length - 1].fadeIn(
-                1000
+                300
               );
           }
 
@@ -375,7 +377,7 @@ setTimeout(() => {
               document
                 .querySelectorAll(".chats iframe")
                 [document.querySelectorAll(".chats iframe").length - 1].fadeIn(
-                  1000
+                  300
                 );
             }
           }
@@ -487,7 +489,7 @@ setTimeout(() => {
     document
       .querySelectorAll(".chats .pdf_attachment")
       [document.querySelectorAll(".chats .pdf_attachment").length - 1].fadeIn(
-        1000
+        300
       );
     scrollToBottomOfResults();
   }
@@ -511,9 +513,7 @@ setTimeout(() => {
       );
     document
       .querySelectorAll(".chats .dropDownMsg")
-      [document.querySelectorAll(".chats .dropDownMsg").length - 1].fadeIn(
-        1000
-      );
+      [document.querySelectorAll(".chats .dropDownMsg").length - 1].fadeIn(300);
     scrollToBottomOfResults();
 
     //add event handler if user selects a option.
@@ -565,7 +565,7 @@ setTimeout(() => {
           );
       }
       scrollToBottomOfResults();
-    }, 1000);
+    }, 300);
   }
 
   // on click of suggestions, get the value and send to Chatbot
@@ -680,6 +680,8 @@ setTimeout(() => {
         document.querySelector(".suggestions").remove();
       if (document.querySelector(".quickReplies"))
         document.querySelector(".quickReplies").remove();
+      if (document.querySelector(".dropDownMsg"))
+        document.querySelector(".dropDownMsg").remove();
 
       // document.querySelector(".usrInput").blur();
       setUserResponse(text);
@@ -703,7 +705,7 @@ setTimeout(() => {
     }
     document
       .querySelectorAll(".chats .cards")
-      [document.querySelectorAll(".chats .cards").length - 1].fadeIn(1000);
+      [document.querySelectorAll(".chats .cards").length - 1].fadeIn(300);
     scrollToBottomOfResults();
 
     const card = document.querySelector("#paginated_cards");
@@ -772,7 +774,9 @@ setTimeout(() => {
     var chips = "";
     for (i = 0; i < quickRepliesData.length; i++) {
       var chip =
-        '<div class="chip" tabindex="0" data-payload=\'' +
+        '<div style="color:#fff;background:' +
+        botcolor +
+        '" class="chip" tabindex="0" data-payload=\'' +
         quickRepliesData[i].payload +
         "'>" +
         quickRepliesData[i].title +
@@ -791,7 +795,7 @@ setTimeout(() => {
     document
       .querySelectorAll(".chats .quickReplies")
       [document.querySelectorAll(".chats .quickReplies").length - 1].fadeIn(
-        1000
+        300
       );
     scrollToBottomOfResults();
     const slider = document.querySelector(".quickReplies");
