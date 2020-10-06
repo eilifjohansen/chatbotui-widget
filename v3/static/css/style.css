@@ -292,6 +292,28 @@ textarea-webkit-scrollbar {
   outline: 1px solid black;
 }
 
+#sendButtonIcon:active {
+  outline: none;
+}
+
+#userInput:hover {
+  background: #f2f2f2;
+}
+
+#userInput:focus {
+  background: #fff;
+}
+
+.imgProfile:hover {
+  border: 3px solid black;
+  border-radius: 50% !important;
+}
+
+.imgProfile:active {
+  border: none;
+  border-radius: 50% !important;
+}
+
 #minimize:hover,
 #close:hover,
 #restart:hover {
