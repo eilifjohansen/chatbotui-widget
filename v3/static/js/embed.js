@@ -188,9 +188,10 @@ setTimeout(() => {
         if (document.querySelector(".quickReplies"))
           document.querySelector(".quickReplies").remove();
 
-        document.querySelector(".usrInput").blur();
+        // document.querySelector(".usrInput").blur();
         setUserResponse(text);
         send(text);
+        document.querySelector(".usrInput").focus();
         e.preventDefault();
         return false;
       }
@@ -680,9 +681,10 @@ setTimeout(() => {
       if (document.querySelector(".quickReplies"))
         document.querySelector(".quickReplies").remove();
 
-      document.querySelector(".usrInput").blur();
+      // document.querySelector(".usrInput").blur();
       setUserResponse(text);
       send(text);
+      document.querySelector(".usrInput").focus();
       return false;
     }
   });
