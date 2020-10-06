@@ -35,11 +35,11 @@ setTimeout(() => {
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
-      '</span><span class="dropdown-trigger"><button title="Minimize chat" aria-label="Minimize chatbot" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
+      '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 5px; style="color: #fff" >' +
       minimizebot +
-      '</button><button title="Restart chat" aria-label="Restart chatbot" id="restart" style="padding-right: 8px; color: #fff" >' +
+      '</button><button title="Restart chat" id="restart" style="padding-right: 8px; color: #fff" >' +
       refreshbot +
-      '</button><button title="Close chat" aria-label="Close chatbot" id="close" style="color: #fff" >' +
+      '</button><button title="Close chat" id="close" style="color: #fff" >' +
       closebot +
       '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
