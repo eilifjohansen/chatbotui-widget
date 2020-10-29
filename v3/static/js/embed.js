@@ -96,10 +96,6 @@ setTimeout(() => {
     var elemsTap = document.querySelector(".tap-target");
     var instancesTap = M.TapTarget.init(elemsTap, {});
     instancesTap.open();
-
-    const body = document.body;
-    const scrollY = body.style.top;
-    body.style.position = "fixed";
     setTimeout(function () {
       instancesTap.close();
     }, 4000);
