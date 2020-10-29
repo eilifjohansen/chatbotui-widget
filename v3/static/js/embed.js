@@ -511,7 +511,6 @@ setTimeout(() => {
     toggleVisibility(".profile_div");
 
     const body = document.body;
-    const scrollY = body.style.top;
     body.style.position = "fixed";
 
     document.querySelector(".chatwidget").focus();
