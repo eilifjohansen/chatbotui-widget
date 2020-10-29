@@ -1,6 +1,6 @@
 /* ============= css related to chats =============== */
 
-/* On larger screens */
+/* On larger screens  background: #f7f7f7;*/
 @media only screen and (min-width: 480px) {
   .chatwidget {
     display: none;
@@ -9,7 +9,7 @@
     height: 500px;
     bottom: 5%;
     position: fixed;
-    background: #f7f7f7;
+    background: #fff;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
     outline: 0px;
@@ -76,7 +76,7 @@
     height: 100%;
     bottom: 0%;
     position: fixed;
-    background: #f7f7f7;
+    background: #fff;
     border-radius: 0px;
     box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
     outline: 0px;
