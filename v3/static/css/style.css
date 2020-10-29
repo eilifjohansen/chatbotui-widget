@@ -4,7 +4,7 @@
 @media only screen and (min-width: 480px) {
   .chatwidget {
     display: none;
-    width: 350px;
+    width: 360px;
     right: 15px;
     /*height: 500px;*/
     bottom: 5%;
@@ -26,10 +26,9 @@
 
   .chats {
     clear: both;
-    height: 380px;
+    height: 65vh;
     padding: 2px;
     border-radius: 1px;
-    overflow-y: scroll;
     margin-top: 1px;
     transition: 0.2s;
   }
@@ -94,7 +93,6 @@
     height: calc(100% - 130px);
     padding: 10px 2px 2px 2px;
     border-radius: 1px;
-    overflow-y: scroll;
     margin-top: 1px;
     transition: 0.2s;
   }
