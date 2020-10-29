@@ -40,7 +40,7 @@ loadjscssfile("https://widget.chatbotui.com/v2/static/css/style.css", "css"); //
 setTimeout(() => {
   document.body.insertAdjacentHTML(
     "beforeEnd",
-    '<div class="widget" tabindex="-1" id="widget"><div class="chat_header" style="background: ' +
+    '<div class="widget" tabindex="0" id="widget"><div class="chat_header" style="background: ' +
       botcolor +
       '"><span class="chat_header_title">' +
       botname +
