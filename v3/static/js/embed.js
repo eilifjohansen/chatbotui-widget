@@ -557,7 +557,7 @@ setTimeout(() => {
       .querySelector(".chats")
       .insertAdjacentHTML(
         "beforeend",
-        '<div class="dropDownMsg"><select class="browser-default dropDownSelect"> <option value="" disabled selected>Choose your option</option>' +
+        '<div class="dropDownMsg"><select class="browser-default dropDownSelect" aria-label="Choose a option in the list"> <option value="" disabled selected>Choose your option</option>' +
           options +
           "</select></div><div class='clearfix'></div>"
       );
