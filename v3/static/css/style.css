@@ -323,10 +323,19 @@ textarea-webkit-scrollbar {
   cursor: pointer;
   background: none;
   border: none;
-  padding-left: 5px;
-  padding-right: 5px;
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+#close,
+#minimize {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#restart {
+  padding-left: 10px;
+  padding-right: 10px !important;
 }
 
 .dropdown-trigger {
