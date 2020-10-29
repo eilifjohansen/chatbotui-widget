@@ -794,7 +794,7 @@ setTimeout(() => {
       data = cardsData[i];
       item =
         '<div tabindex="0" class="carousel_cards in-left">' +
-        '<img class="cardBackgroundImage" src="' +
+        '<img class="cardBackgroundImage" alt="" src="' +
         cardsData[i].image +
         '"><div class="cardFooter">' +
         '<span class="cardTitle" title="' +
