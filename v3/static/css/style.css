@@ -69,7 +69,8 @@
     display: none;
     width: 100%;
     right: 0px;
-    height: 100%;
+    height: 100vh;
+    overflow-y: hidden;
     bottom: 0%;
     position: fixed;
     background: #fff;
@@ -101,12 +102,12 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: #fff;
   }
 
   #chatwidget .chart-container {
     position: relative;
     margin: auto;
-
     width: 90%;
     border-radius: 10px 10px 10px 10px;
     margin-left: 5%;
