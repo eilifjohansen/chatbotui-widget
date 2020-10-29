@@ -47,7 +47,7 @@
   }
 
   #chat-footer {
-    padding: 12.5px 0px 6px 0px;
+    padding: 12.5px 0px 6.25px 0px;
     border-top: 1px solid #ccc;
     background: #fff;
   }
@@ -100,7 +100,7 @@
   }
 
   #chat-footer {
-    padding: 12.5px 0px 6px 0px;
+    padding: 12.5px 0px 12.5px 0px;
     padding-bottom: 5px;
     border-top: 1px solid #ccc;
     background: #fff;
