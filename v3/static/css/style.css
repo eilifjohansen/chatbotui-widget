@@ -69,8 +69,7 @@
     display: none;
     width: 100%;
     right: 0px;
-    height: 100vh;
-    overflow-y: hidden;
+    height: 100%;
     bottom: 0%;
     position: fixed;
     background: #fff;
@@ -88,7 +87,7 @@
 
   #chatwidget .chats {
     clear: both;
-    height: calc(100% - 130px);
+    height: calc(100vh - 130px);
     padding: 10px 2px 2px 2px;
     border-radius: 1px;
     margin-top: 1px;
