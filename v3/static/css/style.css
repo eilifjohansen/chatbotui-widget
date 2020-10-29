@@ -257,6 +257,7 @@ textarea-webkit-scrollbar {
   border: 0;
   height: 40px;
   font-size: 16px;
+  display: inline;
 }
 
 .keypad {
@@ -274,7 +275,7 @@ textarea-webkit-scrollbar {
 
 #sendButton {
   height: 30px;
-  width: 30px;
+  /*width: 30px;*/
   border-radius: 50%;
   display: inline-block;
   float: right;
