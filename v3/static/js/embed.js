@@ -111,6 +111,10 @@ setTimeout(() => {
       toggleVisibility(".profile_div");
       toggleVisibility(".chatwidget");
       document.querySelector(".chatwidget").focus();
+
+      const body = document.body;
+      const scrollY = body.style.top;
+      body.style.position = "fixed";
     }
   };
 
