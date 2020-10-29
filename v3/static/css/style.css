@@ -12,6 +12,7 @@
     background: #fff;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    outline: 0px;
     z-index: 999999;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -75,6 +76,7 @@
     background: #fff;
     border-radius: 0px;
     box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    outline: 0px;
     z-index: 999999;
   }
 
@@ -118,11 +120,15 @@
 
 /* Global CSS */
 
+<<<<<<< HEAD
 #chatwidget:focus {
   outline: 1px solid black;
 }
 
 #chatwidget .chats {
+=======
+.chats {
+>>>>>>> parent of 8c528f1... Update style.css
   padding-top: 20px;
   padding-bottom: 20px;
 }
