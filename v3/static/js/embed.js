@@ -148,6 +148,8 @@ setTimeout(() => {
       chatChart.destroy();
     }
 
+    document.querySelector(".botMsg").remove();
+
     if (document.querySelector(".chart-container"))
       document.querySelector(".chart-container").remove();
 
