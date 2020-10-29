@@ -2,6 +2,14 @@ if (!botcolor) {
   var botcolor = "#1976d2";
 }
 
+if (!botcss) {
+  var botcss = "";
+}
+
+if (!chartjs) {
+  var chartjs = "";
+}
+
 // SVG Icons
 sendbot =
   '<svg id="sendButtonIcon" style="margin-top: -1.5px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
@@ -15,7 +23,12 @@ minimizebot =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 11.5 24 17" class="undefined ns-fill-0" fill="#ffffff" width="40" height="25"> <path d="M6 19h12v2H6v-2z"/></svg>';
 
 function loadjscssfile(filename, filetype) {
-  if (filetype == "css") {
+  if (filetype == "js") {
+    //if filename is a external JavaScript file
+    var fileref = document.createElement("script");
+    fileref.setAttribute("type", "text/javascript");
+    fileref.setAttribute("src", filename);
+  } else if (filetype == "css") {
     //if filename is an external CSS file
     var fileref = document.createElement("link");
     fileref.setAttribute("rel", "stylesheet");
@@ -25,8 +38,13 @@ function loadjscssfile(filename, filetype) {
   if (typeof fileref != "undefined")
     document.getElementsByTagName("head")[0].appendChild(fileref);
 }
+if (chartjs) {
+  loadjscssfile("https://widget.chatbotui.com/v3/static/js/chart.min.js", "js"); //dynamically load and add this .css file
+}
 
-loadjscssfile("https://widget.chatbotui.com/v3/static/css/style.css", "css"); //dynamically load and add this .css file
+if (!botcss) {
+  loadjscssfile("https://widget.chatbotui.com/v3/static/css/style.css", "css"); //dynamically load and add this .css file
+}
 
 setTimeout(() => {
   document.body.insertAdjacentHTML(
