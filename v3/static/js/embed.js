@@ -16,11 +16,17 @@ sendbot =
   botcolor +
   '" width="25" height="25"> <path d="M3.4 20.4l17.45-7.48a1 1 0 0 0 0-1.84L3.4 3.6a.993.993 0 0 0-1.39.91L2 9.12c0 .5.37.93.87.99L17 12L2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z"/></svg>';
 closebot =
-  '<svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="#ffffff" width="25" height="25"> <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"/></svg>';
+  '<svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
+  botcolor +
+  '" width="25" height="25"> <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"/></svg>';
 refreshbot =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="#ffffff" width="25" height="25"> <path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>';
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
+  botcolor +
+  '" width="25" height="25"> <path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>';
 minimizebot =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 11.5 24 17" class="undefined ns-fill-0" fill="#ffffff" width="40" height="25"> <path d="M6 19h12v2H6v-2z"/></svg>';
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 11.5 24 17" class="undefined ns-fill-0" fill="' +
+  botcolor +
+  '" width="40" height="25"> <path d="M6 19h12v2H6v-2z"/></svg>';
 
 function loadjscssfile(filename, filetype) {
   if (filetype == "js") {
@@ -51,6 +57,26 @@ setTimeout(() => {
     "beforeEnd",
     '<button class="profile_div" title="Start chat" id="profile_div" tabindex="0"><img class="imgProfile" alt="" src = "' +
       botphoto +
+      '"/></button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:#fff"><span class="chat_header_title" style="color:' +
+      botcolor +
+      '">' +
+      botname +
+      '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 0px; color: #fff" >' +
+      minimizebot +
+      '</button><button title="Restart chat" id="restart" style="padding-right: 3px; color: #fff" >' +
+      refreshbot +
+      '</button><button title="Close chat" id="close" style="color: #fff" >' +
+      closebot +
+      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
+      sendbot +
+      "</button> </div></div></div>"
+  );
+
+  /*setTimeout(() => {
+  document.body.insertAdjacentHTML(
+    "beforeEnd",
+    '<button class="profile_div" title="Start chat" id="profile_div" tabindex="0"><img class="imgProfile" alt="" src = "' +
+      botphoto +
       '"/></button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background: ' +
       botcolor +
       '"><span class="chat_header_title">' +
@@ -64,7 +90,7 @@ setTimeout(() => {
       '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
       "</button> </div></div></div>"
-  );
+  );*/
 
   document.addEventListener("DOMContentLoaded", function () {
     var elemsTap = document.querySelector(".tap-target");
