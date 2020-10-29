@@ -389,7 +389,7 @@ setTimeout(() => {
               .insertAdjacentHTML(
                 "beforeend",
                 '<div class="singleCard">' +
-                  '<img class="imgcard" tabindex="0" src="' +
+                  '<img class="imgcard" alt="" tabindex="0" src="' +
                   response[i].image +
                   '">' +
                   '</div><div class="clearfix">'
@@ -418,7 +418,7 @@ setTimeout(() => {
                   "beforeend",
                   '<div class="video-container"> <iframe src="' +
                     video_url +
-                    '" frameborder="0" allowfullscreen></iframe> </div>'
+                    '" frameborder="0" title="Youtube video" allowfullscreen></iframe> </div>'
                 );
               document
                 .querySelectorAll(".chats iframe")
