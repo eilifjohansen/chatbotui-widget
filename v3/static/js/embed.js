@@ -510,8 +510,7 @@ setTimeout(() => {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
 
-    const body = document.body;
-    body.style.position = "fixed";
+    document.body.classList.add("chatbotui-modal-open");
 
     document.querySelector(".chatwidget").focus();
   });
@@ -676,8 +675,7 @@ setTimeout(() => {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
-
-    const body = document.body;
+    document.body.classList.remove("chatbotui-modal-open");
   });
 
   var closechataction = document.getElementById("close");
@@ -698,8 +696,7 @@ setTimeout(() => {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
-
-    const body = document.body;
+    document.body.classList.remove("chatbotui-modal-open");
   });
 
   var minimizechataction = document.getElementById("minimize");

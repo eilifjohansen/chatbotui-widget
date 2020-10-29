@@ -64,6 +64,10 @@
 
 /* On mobile */
 @media only screen and (max-width: 479px) {
+  body.chatbotui-modal-open {
+    position: fixed;
+  }
+
   #chatwidget {
     font-family: Arial, Helvetica, sans-serif;
     display: none;
