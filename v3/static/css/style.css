@@ -2,7 +2,7 @@
 
 /* On larger screens  background: #f7f7f7;*/
 @media only screen and (min-width: 480px) {
-   #chatwidget {
+  #chatwidget {
     display: none;
     width: 360px;
     right: 30px;
@@ -118,7 +118,7 @@
 
 /* Global CSS */
 
-#chatwidget .chatwidget:focus {
+#chatwidget:focus {
   outline: 1px solid black;
 }
 
@@ -453,10 +453,10 @@ textarea-webkit-scrollbar {
 }
 
 #chatwidget .metadata_1,
-.metadata_2,#chatwidget 
-.metadata_3,#chatwidget 
-.metadata_4,#chatwidget 
-.row {#chatwidget 
+.metadata_2,
+#chatwidget .metadata_3,
+#chatwidget .metadata_4,
+#chatwidget .row {
   margin-bottom: 0px;
 }
 
@@ -471,17 +471,17 @@ textarea-webkit-scrollbar {
 }
 
 #chatwidget .metadata_2,
-.metadata_3,#chatwidget 
-.metadata_4,#chatwidget 
-.metadata_5,#chatwidget 
-.metadata_6 #chatwidget {
+.metadata_3,
+#chatwidget .metadata_4,
+#chatwidget .metadata_5,
+#chatwidget .metadata_6 #chatwidget {
   color: lightslategrey;
   padding: 5px;
 }
 
 #chatwidget .average_cost,
-.timings,#chatwidget 
-.location#chatwidget ,
+.timings,
+#chatwidget .location#chatwidget,
 .cuisines #chatwidget {
   width: 70%;
   float: right;
@@ -635,7 +635,7 @@ div.content_data::-webkit-scrollbar {
   font-size: 2em;
   color: #000;
   right: 10px;
-  background: #fff; 
+  background: #fff;
   border-radius: 50%;
 }
 
@@ -644,7 +644,7 @@ div.content_data::-webkit-scrollbar {
   font-size: 2em;
   color: #000;
   left: 10px;
-  background: #fff; 
+  background: #fff;
   border-radius: 50%;
 }
 
@@ -937,8 +937,8 @@ video:focus {
 }
 
 #chatwidget .video-container iframe,
-.video-container object,#chatwidget 
-.video-container embed {
+.video-container object,
+#chatwidget .video-container embed {
   position: initial;
   top: 0;
   left: 0;
