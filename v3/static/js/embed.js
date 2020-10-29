@@ -509,6 +509,11 @@ setTimeout(() => {
   document.querySelector("#profile_div").addEventListener("click", function () {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
+
+    const body = document.body;
+    const scrollY = body.style.top;
+    body.style.position = "fixed";
+
     document.querySelector(".chatwidget").focus();
   });
 
@@ -672,6 +677,12 @@ setTimeout(() => {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
+
+    const body = document.body;
+    const scrollY = body.style.top;
+    body.style.position = "";
+    body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
   });
 
   var closechataction = document.getElementById("close");
@@ -692,6 +703,12 @@ setTimeout(() => {
     toggleVisibility(".chatwidget");
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
+
+    const body = document.body;
+    const scrollY = body.style.top;
+    body.style.position = "";
+    body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
   });
 
   var minimizechataction = document.getElementById("minimize");
