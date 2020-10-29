@@ -88,7 +88,7 @@
 
   .chats {
     clear: both;
-    height: 100%;
+    height: calc(100% - 125px);
     padding: 10px 2px 2px 2px;
     border-radius: 1px;
     overflow-y: scroll;
@@ -98,7 +98,7 @@
 
   #chat-footer {
     padding-top: 12.5px;
-    padding-bottom: 12.5px;
+    padding-bottom: px;
     border-top: 1px solid #ccc;
     background: #fff;
     position: fixed;
