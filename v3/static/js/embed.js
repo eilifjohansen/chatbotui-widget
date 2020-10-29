@@ -678,7 +678,6 @@ setTimeout(() => {
     scrollToBottomOfResults();
 
     const body = document.body;
-    body.style.position = "";
   });
 
   var closechataction = document.getElementById("close");
@@ -701,7 +700,6 @@ setTimeout(() => {
     scrollToBottomOfResults();
 
     const body = document.body;
-    body.style.position = "";
   });
 
   var minimizechataction = document.getElementById("minimize");
