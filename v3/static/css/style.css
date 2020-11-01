@@ -92,7 +92,7 @@
 
   #chatwidget .chats {
     clear: both;
-    height: 77vh;
+    height: 75vh;
     padding: 10px 2px 2px 2px;
     border-radius: 1px;
     overflow-y: scroll;
