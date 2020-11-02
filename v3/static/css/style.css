@@ -67,7 +67,6 @@
 @media only screen and (max-width: 479px) {
   body.chatbotui-modal-open {
     overflow: hidden;
-    display: fixed;
   }
 
   #chatwidget {
