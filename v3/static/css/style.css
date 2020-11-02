@@ -68,6 +68,9 @@
   body.chatbotui-modal-open {
     overflow: hidden;
     display: fixed;
+  }
+
+  html.chatbotui-modal-open {
     height: 100%;
   }
 
