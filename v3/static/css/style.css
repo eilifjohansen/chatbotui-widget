@@ -70,6 +70,11 @@
     display: fixed;
   }
 
+  html,
+  body {
+    height: 100%;
+  }
+
   #chatwidget {
     /* font-family: Arial, Helvetica, sans-serif;
     display: none;
@@ -142,7 +147,6 @@
 }
 
 /* Global CSS */
-
 #chatwidget:focus {
   outline: 1px solid black;
 }
