@@ -68,6 +68,7 @@
   body.chatbotui-modal-open {
     overflow: hidden;
     display: fixed;
+    height: 100%;
   }
 
   #chatwidget {
