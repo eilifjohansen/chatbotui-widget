@@ -70,11 +70,6 @@
     display: fixed;
   }
 
-  html,
-  body {
-    height: 100%;
-  }
-
   #chatwidget {
     /* font-family: Arial, Helvetica, sans-serif;
     display: none;
@@ -118,7 +113,7 @@
   }
 
   #chatwidget .chats {
-    height: 90%;
+    height: 100%;
     padding: 10px 2px 2px 2px;
     border-radius: 1px;
     overflow-y: scroll;
