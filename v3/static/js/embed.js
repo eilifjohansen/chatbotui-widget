@@ -1213,9 +1213,15 @@ setTimeout(() => {
 
 function toggleVisibility(selector) {
   let node = document.querySelector(selector);
-  window.getComputedStyle(node).display == "none"
-    ? (node.style.display = "flex")
-    : (node.style.display = "none");
+  if (selector === ".chatwidget") {
+    window.getComputedStyle(node).display == "none"
+      ? (node.style.display = "flex")
+      : (node.style.display = "none");
+  } else {
+    window.getComputedStyle(node).display == "none"
+      ? (node.style.display = "block")
+      : (node.style.display = "none");
+  }
 }
 
 function ready(callback) {

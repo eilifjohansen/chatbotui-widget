@@ -20,7 +20,7 @@
   #chatwidget .chat_header {
     background: #1976d2;
     border-radius: 10px 10px 0px 0px;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 0;
     font-size: 20px;
   }
 
@@ -98,8 +98,10 @@
     height: 100%;
 
     /* have to changed this remove important */
-    /* display: flex ;*/
     flex-direction: column;
+  }
+  div#chatwidget {
+    display: none;
   }
 
   #chatwidget .chat_header {
@@ -149,6 +151,7 @@
 #chatwidget .chats {
   padding-top: 20px;
   padding-bottom: 20px;
+  background: aqua;
 }
 
 #chatwidget .chat_header {
@@ -167,7 +170,9 @@
   border-radius: 50%;
   background: none;
   background-color: transparent !important;
-  border: none;
+  /* border: none; */
+  outline: none;
+  border: 0px;
 }
 
 #profile_div .imgProfile {
