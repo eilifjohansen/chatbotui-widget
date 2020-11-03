@@ -512,17 +512,6 @@ setTimeout(() => {
 
     document.body.classList.add("chatbotui-modal-open");
 
-    document.body.addEventListener(
-      "touchmove",
-      (ev) => {
-        if (ev.touches.length > 1) {
-          ev.preventDefault();
-          ev.stopImmediatePropagation();
-        }
-      },
-      true
-    );
-
     document.querySelector(".chatwidget").focus();
   });
 
