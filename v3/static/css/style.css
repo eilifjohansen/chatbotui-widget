@@ -1,7 +1,7 @@
 /* ============= css related to chats =============== */
 
 /* On larger screens  background: #f7f7f7;*/
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 767px) {
   #chatwidget {
     display: none;
     width: 360px;
@@ -64,7 +64,7 @@
 }
 
 /* On mobile */
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 768px) {
   body.chatbotui-modal-open {
     overflow: hidden;
     display: fixed;
