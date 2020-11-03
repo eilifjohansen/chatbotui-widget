@@ -512,6 +512,8 @@ setTimeout(() => {
 
     document.body.classList.add("chatbotui-modal-open");
 
+    e.preventDefault();
+
     document.querySelector(".chatwidget").focus();
   });
 
