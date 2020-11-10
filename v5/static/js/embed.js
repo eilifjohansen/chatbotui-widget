@@ -45,11 +45,11 @@ function loadjscssfile(filename, filetype) {
     document.getElementsByTagName("head")[0].appendChild(fileref);
 }
 if (chartjs) {
-  loadjscssfile("https://widget.chatbotui.com/v3/static/js/chart.min.js", "js"); //dynamically load and add this .css file
+  loadjscssfile("https://widget.chatbotui.com/v5/static/js/chart.min.js", "js"); //dynamically load and add this .css file
 }
 
 if (!botcss) {
-  loadjscssfile("https://widget.chatbotui.com/v3/static/css/style.css", "css"); //dynamically load and add this .css file
+  loadjscssfile("https://widget.chatbotui.com/v5/static/css/style.css", "css"); //dynamically load and add this .css file
 }
 let currentScrollPosition = null;
 
