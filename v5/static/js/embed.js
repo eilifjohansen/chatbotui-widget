@@ -10,23 +10,6 @@ if (!chartjs) {
   var chartjs = "";
 }
 
-// Prevent body scrolling on mobile when chat is opened
-let lastKnownScrollPosition =
-  document.documentElement.scrollTop || document.body.scrollTop;
-document.body.onscroll = function (e) {
-  const chatModal = document.querySelector(".chatwidget");
-  if (
-    chatModal &&
-    window.getComputedStyle(chatModal).display != "none" &&
-    screen.width <= 768
-  ) {
-    document.documentElement.scrollTop = document.body.scrollTop = lastKnownScrollPosition;
-    return;
-  }
-  lastKnownScrollPosition =
-    document.documentElement.scrollTop || document.body.scrollTop;
-};
-
 // SVG Icons
 sendbot =
   '<svg id="sendButtonIcon" style="margin-top: -1.5px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
@@ -68,6 +51,7 @@ if (chartjs) {
 if (!botcss) {
   loadjscssfile("https://widget.chatbotui.com/v3/static/css/style.css", "css"); //dynamically load and add this .css file
 }
+let currentScrollPosition = null;
 
 setTimeout(() => {
   document.body.insertAdjacentHTML(
@@ -536,12 +520,18 @@ setTimeout(() => {
   document.querySelector("#profile_div").addEventListener(
     "click",
     function () {
+      currentScrollPosition =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      setTimeout(() => document.body.classList.add("no-scroll"), 500);
+      setTimeout(
+        () => document.querySelector(".chatwidget").classList.toggle("active"),
+        40
+      );
       toggleVisibility(".chatwidget");
       toggleVisibility(".profile_div");
 
       document.body.classList.add("chatbotui-modal-open");
 
-      document.querySelector(".chatwidget").classList.add("active");
       document.querySelector(".chatwidget").focus();
     },
     false
@@ -704,7 +694,11 @@ setTimeout(() => {
 
   //close function to close the chatwidget.
   document.querySelector("#close").addEventListener("click", function () {
-    setTimeout(() => toggleVisibility(".chatwidget"), 300);
+    document.body.classList.remove("no-scroll");
+    document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    setTimeout(() => {
+      toggleVisibility(".chatwidget");
+    }, 500);
     document.querySelector(".chatwidget").classList.toggle("active");
 
     toggleVisibility(".profile_div");
@@ -728,7 +722,9 @@ setTimeout(() => {
 
   //minimize function to minimize the chatwidget.
   document.querySelector("#minimize").addEventListener("click", function () {
-    setTimeout(() => toggleVisibility(".chatwidget"), 300);
+    document.body.classList.remove("no-scroll");
+    document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    setTimeout(() => toggleVisibility(".chatwidget"), 500);
     document.querySelector(".chatwidget").classList.toggle("active");
 
     toggleVisibility(".profile_div");
