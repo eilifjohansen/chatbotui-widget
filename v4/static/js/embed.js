@@ -10,18 +10,6 @@ if (!chartjs) {
   var chartjs = "";
 }
 
-// Prevent body scrolling on mobile when chat is opened
-let lastKnownScrollPosition = document.documentElement.scrollTop || document.body.scrollTop
-document.body.onscroll = function (e) {
-  const chatModal = document.querySelector('.chatwidget');
-  if (chatModal && window.getComputedStyle(chatModal).display != 'none' && screen.width <= 768) {
-    document.documentElement.scrollTop = document.body.scrollTop = lastKnownScrollPosition
-    return
-  }
-  lastKnownScrollPosition = document.documentElement.scrollTop || document.body.scrollTop
-}
-
-
 // SVG Icons
 sendbot =
   '<svg id="sendButtonIcon" style="margin-top: -1.5px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
@@ -63,25 +51,26 @@ if (chartjs) {
 if (!botcss) {
   loadjscssfile("https://widget.chatbotui.com/v3/static/css/style.css", "css"); //dynamically load and add this .css file
 }
+let currentScrollPosition = null;
 
 setTimeout(() => {
   document.body.insertAdjacentHTML(
     "beforeEnd",
     '<button class="profile_div" title="Start chat" id="profile_div" tabindex="0"><img class="imgProfile" alt="" src = "' +
-    botphoto +
-    '"/></button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:#fff"><span class="chat_header_title" style="color:' +
-    botcolor +
-    '">' +
-    botname +
-    '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 0px; color: #fff" >' +
-    minimizebot +
-    '</button><button title="Restart chat" id="restart" style="padding-right: 3px; color: #fff" >' +
-    refreshbot +
-    '</button><button title="Close chat" id="close" style="color: #fff" >' +
-    closebot +
-    '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
-    sendbot +
-    "</button> </div></div></div>"
+      botphoto +
+      '"/></button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:#fff"><span class="chat_header_title" style="color:' +
+      botcolor +
+      '">' +
+      botname +
+      '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 0px; color: #fff" >' +
+      minimizebot +
+      '</button><button title="Restart chat" id="restart" style="padding-right: 3px; color: #fff" >' +
+      refreshbot +
+      '</button><button title="Close chat" id="close" style="color: #fff" >' +
+      closebot +
+      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
+      sendbot +
+      "</button> </div></div></div>"
   );
 
   /*setTimeout(() => {
@@ -111,7 +100,6 @@ setTimeout(() => {
     setTimeout(function () {
       instancesTap.close();
     }, 4000);
-
   });
 
   var chatwidget = document.getElementById("profile_div");
@@ -124,7 +112,6 @@ setTimeout(() => {
       toggleVisibility(".profile_div");
       toggleVisibility(".chatwidget");
       document.querySelector(".chatwidget").focus();
-
     }
   };
 
@@ -180,16 +167,16 @@ setTimeout(() => {
     // send an event to the bot, so that bot can start the conversation by greeting the user
 
     fetch(webhook, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: action_name,
-          policy: "MappingPolicy",
-          confidence: "0.98",
-        }),
-      })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: action_name,
+        policy: "MappingPolicy",
+        confidence: "0.98",
+      }),
+    })
       .then(function (r) {
         console.log("Response from Chatbot");
         console.log("Status: ", r.status);
@@ -297,15 +284,15 @@ setTimeout(() => {
   //============== send the user message to Chatbot server =============================================
   function send(message) {
     fetch(webhook, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: message,
-          sender: user_id
-        }),
-      })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: message,
+        sender: user_id,
+      }),
+    })
       .then(function (r) {
         console.log("Response from Chatbot");
         console.log("Status: ", r.status);
@@ -359,9 +346,11 @@ setTimeout(() => {
           .querySelector(".chats")
           .insertAdjacentHTML("beforeend", '</p><div class="clearfix"></div>');
         document
-          .querySelectorAll(".chats .botMsg")[document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(300);
+          .querySelectorAll(".chats .botMsg")
+          [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(300);
         document
-          .querySelectorAll(".chats .botAvatar")[document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(
+          .querySelectorAll(".chats .botAvatar")
+          [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(
             300
           );
       } else {
@@ -387,11 +376,13 @@ setTimeout(() => {
                 '</p><div class="clearfix"></div>'
               );
             document
-              .querySelectorAll(".chats .botMsg")[document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(
+              .querySelectorAll(".chats .botMsg")
+              [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(
                 300
               );
             document
-              .querySelectorAll(".chats .botAvatar")[
+              .querySelectorAll(".chats .botAvatar")
+              [
                 document.querySelectorAll(".chats .botAvatar").length - 1
               ].fadeIn(300);
           }
@@ -403,13 +394,14 @@ setTimeout(() => {
               .insertAdjacentHTML(
                 "beforeend",
                 '<div class="singleCard">' +
-                '<img class="imgcard" alt="" tabindex="0" src="' +
-                response[i].image +
-                '">' +
-                '</div><div class="clearfix">'
+                  '<img class="imgcard" alt="" tabindex="0" src="' +
+                  response[i].image +
+                  '">' +
+                  '</div><div class="clearfix">'
               );
             document
-              .querySelectorAll(".chats .imgcard")[document.querySelectorAll(".chats .imgcard").length - 1].fadeIn(
+              .querySelectorAll(".chats .imgcard")
+              [document.querySelectorAll(".chats .imgcard").length - 1].fadeIn(
                 300
               );
           }
@@ -430,11 +422,12 @@ setTimeout(() => {
                 .insertAdjacentHTML(
                   "beforeend",
                   '<div class="video-container"> <iframe src="' +
-                  video_url +
-                  '" frameborder="0" title="Youtube video" allowfullscreen></iframe> </div>'
+                    video_url +
+                    '" frameborder="0" title="Youtube video" allowfullscreen></iframe> </div>'
                 );
               document
-                .querySelectorAll(".chats iframe")[document.querySelectorAll(".chats iframe").length - 1].fadeIn(
+                .querySelectorAll(".chats iframe")
+                [document.querySelectorAll(".chats iframe").length - 1].fadeIn(
                   300
                 );
             }
@@ -513,7 +506,7 @@ setTimeout(() => {
           }
 
           scrollToBottomOfResults();
-          // Time to wait before showing the next message. 
+          // Time to wait before showing the next message.
           // We'll make it a random number between 200 and 600 to make it dynamic.
           const ms = Math.random() * (600 - 200) + 200;
           console.log(ms);
@@ -524,16 +517,25 @@ setTimeout(() => {
   }
 
   //====================================== Toggle chatbot =======================================
-  document.querySelector("#profile_div").addEventListener("click", function () {
-    toggleVisibility(".chatwidget");
-    toggleVisibility(".profile_div");
+  document.querySelector("#profile_div").addEventListener(
+    "click",
+    function () {
+      currentScrollPosition =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      setTimeout(() => document.body.classList.add("no-scroll"), 500);
+      setTimeout(
+        () => document.querySelector(".chatwidget").classList.toggle("active"),
+        40
+      );
+      toggleVisibility(".chatwidget");
+      toggleVisibility(".profile_div");
 
-    document.body.classList.add("chatbotui-modal-open");
-    
-    document.querySelector(".chatwidget").classList.add('active');
-    document.querySelector(".chatwidget").focus();
-    
-  }, false);
+      document.body.classList.add("chatbotui-modal-open");
+
+      document.querySelector(".chatwidget").focus();
+    },
+    false
+  );
 
   //====================================== Render Pdf attachment =======================================
   function renderPdfAttachment(data) {
@@ -544,20 +546,21 @@ setTimeout(() => {
       .insertAdjacentHTML(
         "beforeend",
         '<div class="pdf_attachment">' +
-        '<div class="row">' +
-        '<div class="col s3 pdf_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="#ffffff" width="25" height="25"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2c-.28 0-.5-.22-.5-.5v-5c0-.28.22-.5.5-.5h2c.83 0 1.5.67 1.5 1.5v3zm4-3.75c0 .41-.34.75-.75.75H19v1h.75c.41 0 .75.34.75.75s-.34.75-.75.75H19v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1h1.25c.41 0 .75.34.75.75zM9 9.5h1v-1H9v1zM3 6c-.55 0-1 .45-1 1v13c0 1.1.9 2 2 2h13c.55 0 1-.45 1-1s-.45-1-1-1H5c-.55 0-1-.45-1-1V7c0-.55-.45-1-1-1zm11 5.5h1v-3h-1v3z"/></svg></div>' +
-        '<div class="col s9 pdf_link">' +
-        '<a href="' +
-        pdf_url +
-        '" target="_blank">' +
-        pdf_title +
-        " </a>" +
-        "</div>" +
-        "</div>" +
-        "</div><div class='clearfix'></div>"
+          '<div class="row">' +
+          '<div class="col s3 pdf_icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="#ffffff" width="25" height="25"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2c-.28 0-.5-.22-.5-.5v-5c0-.28.22-.5.5-.5h2c.83 0 1.5.67 1.5 1.5v3zm4-3.75c0 .41-.34.75-.75.75H19v1h.75c.41 0 .75.34.75.75s-.34.75-.75.75H19v1.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8c0-.55.45-1 1-1h1.25c.41 0 .75.34.75.75zM9 9.5h1v-1H9v1zM3 6c-.55 0-1 .45-1 1v13c0 1.1.9 2 2 2h13c.55 0 1-.45 1-1s-.45-1-1-1H5c-.55 0-1-.45-1-1V7c0-.55-.45-1-1-1zm11 5.5h1v-3h-1v3z"/></svg></div>' +
+          '<div class="col s9 pdf_link">' +
+          '<a href="' +
+          pdf_url +
+          '" target="_blank">' +
+          pdf_title +
+          " </a>" +
+          "</div>" +
+          "</div>" +
+          "</div><div class='clearfix'></div>"
       );
     document
-      .querySelectorAll(".chats .pdf_attachment")[document.querySelectorAll(".chats .pdf_attachment").length - 1].fadeIn(
+      .querySelectorAll(".chats .pdf_attachment")
+      [document.querySelectorAll(".chats .pdf_attachment").length - 1].fadeIn(
         300
       );
     scrollToBottomOfResults();
@@ -577,11 +580,12 @@ setTimeout(() => {
       .insertAdjacentHTML(
         "beforeend",
         '<div class="dropDownMsg"><select class="browser-default dropDownSelect" aria-label="Choose a option in the list"> <option value="" disabled selected>Choose your option</option>' +
-        options +
-        "</select></div><div class='clearfix'></div>"
+          options +
+          "</select></div><div class='clearfix'></div>"
       );
     document
-      .querySelectorAll(".chats .dropDownMsg")[document.querySelectorAll(".chats .dropDownMsg").length - 1].fadeIn(300);
+      .querySelectorAll(".chats .dropDownMsg")
+      [document.querySelectorAll(".chats .dropDownMsg").length - 1].fadeIn(300);
     scrollToBottomOfResults();
 
     //add event handler if user selects a option.
@@ -624,12 +628,12 @@ setTimeout(() => {
           .insertAdjacentHTML(
             "beforeend",
             '<div tabindex="0" style="background: ' +
-            botcolor +
-            '" class="menuChips" data-payload=\'' +
-            suggestions[i].payload +
-            "'>" +
-            suggestions[i].title +
-            "</div>"
+              botcolor +
+              '" class="menuChips" data-payload=\'' +
+              suggestions[i].payload +
+              "'>" +
+              suggestions[i].title +
+              "</div>"
           );
       }
       scrollToBottomOfResults();
@@ -690,9 +694,13 @@ setTimeout(() => {
 
   //close function to close the chatwidget.
   document.querySelector("#close").addEventListener("click", function () {
-    setTimeout(() => toggleVisibility(".chatwidget"), 300);;
-    document.querySelector(".chatwidget").classList.toggle('active');
-    
+    document.body.classList.remove("no-scroll");
+    document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    setTimeout(() => {
+      toggleVisibility(".chatwidget");
+    }, 500);
+    document.querySelector(".chatwidget").classList.toggle("active");
+
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
 
@@ -714,8 +722,10 @@ setTimeout(() => {
 
   //minimize function to minimize the chatwidget.
   document.querySelector("#minimize").addEventListener("click", function () {
-    setTimeout(() => toggleVisibility(".chatwidget"), 300);
-    document.querySelector(".chatwidget").classList.toggle('active');
+    document.body.classList.remove("no-scroll");
+    document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    setTimeout(() => toggleVisibility(".chatwidget"), 500);
+    document.querySelector(".chatwidget").classList.toggle("active");
 
     toggleVisibility(".profile_div");
     scrollToBottomOfResults();
@@ -782,7 +792,8 @@ setTimeout(() => {
       document.querySelector(".cards .arrow.next").fadeIn(3000);
     }
     document
-      .querySelectorAll(".chats .cards")[document.querySelectorAll(".chats .cards").length - 1].fadeIn(300);
+      .querySelectorAll(".chats .cards")
+      [document.querySelectorAll(".chats .cards").length - 1].fadeIn(300);
     scrollToBottomOfResults();
 
     const card = document.querySelector("#paginated_cards");
@@ -866,11 +877,12 @@ setTimeout(() => {
       .insertAdjacentHTML(
         "beforeend",
         '<div class="quickReplies">' +
-        chips +
-        '</div><div class="clearfix"></div>'
+          chips +
+          '</div><div class="clearfix"></div>'
       );
     document
-      .querySelectorAll(".chats .quickReplies")[document.querySelectorAll(".chats .quickReplies").length - 1].fadeIn(
+      .querySelectorAll(".chats .quickReplies")
+      [document.querySelectorAll(".chats .quickReplies").length - 1].fadeIn(
         300
       );
     scrollToBottomOfResults();
@@ -990,12 +1002,12 @@ setTimeout(() => {
       .insertAdjacentHTML(
         "beforeend",
         '<img class="botAvatar" id="botAvatar" src="' +
-        botphoto +
-        '"/><div class="botTyping">' +
-        '<div class="bounce1"></div>' +
-        '<div class="bounce2"></div>' +
-        '<div class="bounce3"></div>' +
-        "</div>"
+          botphoto +
+          '"/><div class="botTyping">' +
+          '<div class="bounce1"></div>' +
+          '<div class="bounce2"></div>' +
+          '<div class="bounce3"></div>' +
+          "</div>"
       );
     document.querySelector(".botTyping").style.display = "";
     scrollToBottomOfResults();
@@ -1031,9 +1043,11 @@ setTimeout(() => {
     var contents = '<ul class="collapsible">' + list + "</uL>";
     document.querySelector(".chats").innerHTML += contents;
     document
-      .querySelectorAll(".chats .botMsg")[document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
+      .querySelectorAll(".chats .botMsg")
+      [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
     document
-      .querySelectorAll(".chats .botAvatar")[document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
+      .querySelectorAll(".chats .botAvatar")
+      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
 
     // initialize the collapsible
     let collapsibles = document.querySelectorAll(".collapsible-header");
@@ -1109,9 +1123,11 @@ setTimeout(() => {
       '<div class="chart-container"> <!--<span class="modal-trigger" id="expand" title="expand" href="#modal1"><i class="fa fa-external-link" aria-hidden="true"></i></span>--> <canvas id="chat-chart" ></canvas> </div> <div class="clearfix"></div>';
     document.querySelector(".chats").innerHTML += html;
     document
-      .querySelectorAll(".chats .botMsg")[document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
+      .querySelectorAll(".chats .botMsg")
+      [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
     document
-      .querySelectorAll(".chats .botAvatar")[document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
+      .querySelectorAll(".chats .botAvatar")
+      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
 
     //create the context that will draw the charts over the canvas in the ".chart-container" div
     var ctx = document.getElementById("chat-chart");
@@ -1120,12 +1136,14 @@ setTimeout(() => {
     //for more info. refer: https://www.chartjs.org/docs/latest/configuration/
     var data = {
       labels: labels,
-      datasets: [{
-        label: title,
-        backgroundColor: backgroundColor,
-        data: chartsData,
-        fill: false,
-      }, ],
+      datasets: [
+        {
+          label: title,
+          backgroundColor: backgroundColor,
+          data: chartsData,
+          fill: false,
+        },
+      ],
     };
     var options = {
       title: {
@@ -1190,12 +1208,14 @@ setTimeout(() => {
     //for more info. refer: https://www.chartjs.org/docs/latest/configuration/
     var data = {
       labels: labels,
-      datasets: [{
-        label: title,
-        backgroundColor: backgroundColor,
-        data: chartsData,
-        fill: false,
-      }, ],
+      datasets: [
+        {
+          label: title,
+          backgroundColor: backgroundColor,
+          data: chartsData,
+          fill: false,
+        },
+      ],
     };
     var options = {
       title: {
@@ -1227,20 +1247,20 @@ setTimeout(() => {
 function toggleVisibility(selector) {
   let node = document.querySelector(selector);
   if (selector === ".chatwidget") {
-    window.getComputedStyle(node).display == "none" ?
-      (node.style.display = "flex") :
-      (node.style.display = "none");
+    window.getComputedStyle(node).display == "none"
+      ? (node.style.display = "flex")
+      : (node.style.display = "none");
   } else {
-    window.getComputedStyle(node).display == "none" ?
-      (node.style.display = "block") :
-      (node.style.display = "none");
+    window.getComputedStyle(node).display == "none"
+      ? (node.style.display = "block")
+      : (node.style.display = "none");
   }
 }
 
 function ready(callback) {
-  document.readyState != "loading" ?
-    callback() :
-    document.addEventListener("DOMContentLoaded", callback);
+  document.readyState != "loading"
+    ? callback()
+    : document.addEventListener("DOMContentLoaded", callback);
 }
 
 Element.prototype.remove = function () {
@@ -1300,7 +1320,6 @@ Element.prototype.fadeOut = function (ms) {
   }
 };
 
-
 function addEventListenerById(event, id, callback) {
   document.addEventListener(event, function (e) {
     if (e.target && e.target.id == id) {
@@ -1320,7 +1339,7 @@ function addEventListenerByClass(event, className, callback) {
 async function sleep(ms) {
   return new Promise(function (resolve) {
     setTimeout(() => {
-      resolve()
+      resolve();
     }, ms);
-  })
+  });
 }
