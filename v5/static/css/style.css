@@ -70,10 +70,10 @@
 
 /* On mobile */
 @media only screen and (max-width: 768px) {
-  /* body.chatbotui-modal-open {
-      overflow: hidden;
-      display: fixed;
-    } */
+  body.chatbotui-modal-open {
+    overflow: hidden;
+    display: fixed;
+  }
 
   body.no-scroll {
     /* height: 100%; */
