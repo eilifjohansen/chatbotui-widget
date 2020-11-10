@@ -522,7 +522,7 @@ setTimeout(() => {
     function () {
       currentScrollPosition =
         document.documentElement.scrollTop || document.body.scrollTop;
-      document.body.classList.add("no-scroll");
+
       setTimeout(
         () => document.querySelector(".chatwidget").classList.toggle("active"),
         40
