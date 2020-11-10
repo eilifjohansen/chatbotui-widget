@@ -523,7 +523,10 @@ setTimeout(() => {
       currentScrollPosition =
         document.documentElement.scrollTop || document.body.scrollTop;
       document.body.classList.add("no-scroll");
-      document.querySelector(".chatwidget").classList.toggle("active");
+      setTimeout(
+        () => document.querySelector(".chatwidget").classList.toggle("active"),
+        40
+      );
       toggleVisibility(".chatwidget");
       toggleVisibility(".profile_div");
 
