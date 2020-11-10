@@ -71,14 +71,14 @@
 /* On mobile */
 @media only screen and (max-width: 768px) {
   body.chatbotui-modal-open {
-    overflow: hidden;
-    display: fixed;
+    overflow: hidden !important;
+    display: fixed !important;
   }
 
   body.no-scroll {
     /* height: 100%; */
     touch-action: none !important;
-    position: fixed;
+    position: fixed !important;
   }
 
   #chatwidget {
