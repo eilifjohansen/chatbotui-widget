@@ -1,9 +1,14 @@
+// Custom variables
 if (!botcolor) {
   var botcolor = "#1976d2";
 }
 
 if (!botcss) {
   var botcss = "";
+}
+
+if (!fontawesome) {
+  var fontawesome = "";
 }
 
 if (!chartjs) {
@@ -32,6 +37,7 @@ minimizebot =
   botcolor +
   '" width="40" height="25"> <path d="M6 19h12v2H6v-2z"/></svg>';
 
+// Load JS and CSS
 function loadjscssfile(filename, filetype) {
   if (filetype == "js") {
     //if filename is a external JavaScript file
@@ -49,11 +55,16 @@ function loadjscssfile(filename, filetype) {
     document.getElementsByTagName("head")[0].appendChild(fileref);
 }
 if (chartjs) {
-  loadjscssfile("https://widget.chatbotui.com/v7/static/js/chart.min.js", "js"); //dynamically load and add this .css file
+  loadjscssfile("https://widget.chatbotui.com/v7/static/js/chart.min.js", "js"); //dynamically load and add this .js file
 }
-
 if (!botcss) {
   loadjscssfile("https://widget.chatbotui.com/v7/static/css/style.css", "css"); //dynamically load and add this .css file
+}
+if (fontawesome) {
+  loadjscssfile(
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+    "css"
+  ); //dynamically load and add this .css file
 }
 let currentScrollPosition = null;
 
@@ -76,26 +87,6 @@ setTimeout(() => {
       sendbot +
       "</button> </div></div></div>"
   );
-
-  /*setTimeout(() => {
-  document.body.insertAdjacentHTML(
-    "beforeEnd",
-    '<button class="profile_div" title="Start chat" id="profile_div" tabindex="0"><img class="imgProfile" alt="" src = "' +
-      botphoto +
-      '"/></button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background: ' +
-      botcolor +
-      '"><span class="chat_header_title">' +
-      botname +
-      '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 0px; color: #fff" >' +
-      minimizebot +
-      '</button><button title="Restart chat" id="restart" style="padding-right: 3px; color: #fff" >' +
-      refreshbot +
-      '</button><button title="Close chat" id="close" style="color: #fff" >' +
-      closebot +
-      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <textarea id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
-      sendbot +
-      "</button> </div></div></div>"
-  );*/
 
   document.addEventListener("DOMContentLoaded", function () {
     var elemsTap = document.querySelector(".tap-target");
@@ -253,12 +244,7 @@ setTimeout(() => {
   }
 
   //==================================== Set user response =====================================
-  /*    
-  Removed from User response
-  '<img class="userAvatar" src=' +
-      "./static/img/userAvatar.jpg" +
-      '>
-  */
+
   function setUserResponse(message) {
     var UserResponse = document.createElement("p");
     UserResponse.classList.add("userMsg");
@@ -1277,6 +1263,8 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function () {
     }
   }
 };
+
+// Animations
 Element.prototype.fadeIn = function (ms) {
   let el = this;
   el.style.opacity = 0;
