@@ -10,6 +10,10 @@ if (!chartjs) {
   var chartjs = "";
 }
 
+if (!botphoto) {
+  var botphoto = "./static/img/email-black-18dp.svg";
+}
+
 // SVG Icons
 sendbot =
   '<svg id="sendButtonIcon" style="margin-top: -1.5px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
@@ -49,7 +53,7 @@ if (chartjs) {
 }
 
 if (!botcss) {
-  loadjscssfile("https://widget.chatbotui.com/v5/static/css/style.css", "css"); //dynamically load and add this .css file
+  loadjscssfile("https://widget.chatbotui.com/v6/static/css/style.css", "css"); //dynamically load and add this .css file
 }
 let currentScrollPosition = null;
 
