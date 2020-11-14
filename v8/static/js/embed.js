@@ -1123,9 +1123,9 @@ setTimeout(() => {
     document
       .querySelectorAll(".chats .botMsg")
       [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
-    document
+    /* document
       .querySelectorAll(".chats .botAvatar")
-      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
+      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100); */
 
     //create the context that will draw the charts over the canvas in the ".chart-container" div
     var ctx = document.getElementById("chat-chart");
