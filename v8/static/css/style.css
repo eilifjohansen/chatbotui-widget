@@ -549,7 +549,7 @@ div.content_data::-webkit-scrollbar {
 /* css for single card */
 
 #chatwidget .singleCard {
-  padding-left: 7.5px;
+  padding-left: 13.5px;
   padding-right: 10px;
 }
 
@@ -582,7 +582,7 @@ div.content_data::-webkit-scrollbar {
 }
 
 #chatwidget .menu {
-  padding: 5px;
+  padding: 0px;
 }
 
 #chatwidget .menuChips {
@@ -590,7 +590,7 @@ div.content_data::-webkit-scrollbar {
   background: #2c53af;
   color: #fff;
   text-align: center;
-  padding: 10px 5px 10px 5px;
+  padding: 10px 7.5px 10px 7.5px;
   margin-bottom: 5px;
   cursor: pointer;
   border-radius: 30px;
