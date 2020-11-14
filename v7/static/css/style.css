@@ -153,6 +153,11 @@
   outline: 1px solid black;
 }
 
+#chatwidget .chats {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 #chatwidget .chat_header {
   border-bottom: 1px solid #666;
 }
