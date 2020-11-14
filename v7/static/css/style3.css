@@ -28,7 +28,6 @@
     background: #1976d2;
     border-radius: 10px 10px 0px 0px;
     padding: 10px 15.5px;
-    padding-right: 6px;
     font-size: 20px;
 
     display: flex;
@@ -120,7 +119,6 @@
     border-radius: 0px;
     font-size: 20px;
     padding: 12.5px;
-    padding-right: 5px;
   }
 
   #chatwidget .chats {
@@ -184,7 +182,7 @@
 
 #chatwidget .chat_header_title {
   color: #000;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 #chatwidget .clearfix {
@@ -307,7 +305,7 @@ textarea-webkit-scrollbar {
 
 #sendButton {
   height: 30px;
-  margin-right: 13px;
+  margin-right: 19px;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
