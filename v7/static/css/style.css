@@ -154,8 +154,8 @@
 }
 
 #chatwidget .chats {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #chatwidget .chat_header {
@@ -165,7 +165,7 @@
 #profile_div {
   position: fixed;
   padding: 5px;
-  width: 60px;
+  width: 75px;
   /* height: 74px; */
   bottom: 20px;
   right: 20px;
@@ -174,7 +174,7 @@
   /* border-radius: 50%; */
   background: none;
   background-color: transparent !important;
-  outline: none;
+  /*outline: none;*/
   border: 0px;
 }
 
@@ -887,6 +887,7 @@ ul.collapsible > li:last-child .collapsible-body {
 /* css for botTyping */
 
 #chatwidget .botTyping {
+  margin-bottom: 10px;
   float: left;
   margin-top: 5px;
   background: white;
