@@ -1,9 +1,10 @@
-/* On larger screens */
+/* On larger screens  background: #f7f7f7;*/
 @media only screen and (min-width: 767px) {
   #chatwidget {
     display: none;
     width: 360px;
     right: 30px;
+    /*height: 500px;*/
     bottom: -3%;
     position: fixed;
     background: #fff;
@@ -27,7 +28,6 @@
     background: #1976d2;
     border-radius: 10px 10px 0px 0px;
     padding: 10px 15.5px;
-    padding-right: 6px;
     font-size: 20px;
 
     display: flex;
@@ -79,6 +79,7 @@
   }
 
   #chatwidget {
+
     /* -------------------- */
 
     font-family: Arial, Helvetica, sans-serif;
@@ -95,6 +96,7 @@
 
     /* have to changed this remove important */
     flex-direction: column;
+
 
     transition: all 0.5s ease-in-out;
     opacity: 0;
@@ -117,7 +119,6 @@
     border-radius: 0px;
     font-size: 20px;
     padding: 12.5px;
-    padding-right: 5px;
   }
 
   #chatwidget .chats {
@@ -152,10 +153,6 @@
   outline: 1px solid black;
 }
 
-#chatwidget .chats {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 
 #chatwidget .chat_header {
   border-bottom: 1px solid #666;
@@ -164,7 +161,7 @@
 #profile_div {
   position: fixed;
   padding: 5px;
-  width: 75px;
+  width: 60px;
   /* height: 74px; */
   bottom: 20px;
   right: 20px;
@@ -173,14 +170,13 @@
   /* border-radius: 50%; */
   background: none;
   background-color: transparent !important;
-  /*outline: none;*/
+  outline: none;
   border: 0px;
 }
 
 #profile_div .imgProfile {
   /* box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096; */
   /* border-radius: 50px; */
-  border-radius: 15% !important;
   width: 100%;
 }
 
@@ -302,14 +298,14 @@ textarea-webkit-scrollbar {
   align-items: center;
   background: white;
   width: 100%;
-  padding: 7.5px 5px 7.5px 5px;
+  padding: 5px;
   border-radius: 0px 0px 10px 10px;
   border-top: 1px solid #ccc;
 }
 
 #sendButton {
   height: 30px;
-  margin-right: 13px;
+  margin-right: 10px;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
@@ -334,13 +330,13 @@ textarea-webkit-scrollbar {
 }
 
 #profile_div .imgProfile:hover {
-  /*border: 1px solid black;*/
-  /* border-radius: 50% !important;*/
+  border: 1px solid black;
+  border-radius: 50% !important;
 }
 
 #profile_div .imgProfile:active {
   border: none;
-  /* border-radius: 50% !important;*/
+  border-radius: 50% !important;
 }
 
 #minimize:hover,
@@ -887,7 +883,6 @@ ul.collapsible > li:last-child .collapsible-body {
 /* css for botTyping */
 
 #chatwidget .botTyping {
-  margin-bottom: 10px;
   float: left;
   margin-top: 5px;
   background: white;

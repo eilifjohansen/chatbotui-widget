@@ -340,7 +340,7 @@ setTimeout(() => {
         chatMsg.classList.add("botMsg");
         chatMsg.innerText = fallbackMsg;
 
-        document.querySelector(".chats").appendChild(avatar);
+        // document.querySelector(".chats").appendChild(avatar);
         document.querySelector(".chats").appendChild(chatMsg);
         document
           .querySelector(".chats")
@@ -367,7 +367,7 @@ setTimeout(() => {
             chatMsg.setAttribute("tabindex", "0");
             chatMsg.innerText = response[i].text;
 
-            document.querySelector(".chats").appendChild(avatar);
+            // document.querySelector(".chats").appendChild(avatar);
             document.querySelector(".chats").appendChild(chatMsg);
             document
               .querySelector(".chats")
@@ -380,11 +380,11 @@ setTimeout(() => {
               [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(
                 300
               );
-            document
+            /*  document
               .querySelectorAll(".chats .botAvatar")
               [
                 document.querySelectorAll(".chats .botAvatar").length - 1
-              ].fadeIn(300);
+              ].fadeIn(300);*/
           }
 
           //check if the response contains "images"
@@ -1001,9 +1001,7 @@ setTimeout(() => {
       .querySelector(".chats")
       .insertAdjacentHTML(
         "beforeend",
-        '<img class="botAvatar" id="botAvatar" src="' +
-          botphotoinside +
-          '"/><div class="botTyping">' +
+        '<div class="botTyping">' +
           '<div class="bounce1"></div>' +
           '<div class="bounce2"></div>' +
           '<div class="bounce3"></div>' +
