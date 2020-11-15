@@ -915,7 +915,7 @@ ul.collapsible > li:last-child .collapsible-body {
 
 #chatwidget .botTyping > div {
   width: 10px;
-  height: 9px;
+  height: 8px;
   background-color: #2c53af;
   border-radius: 100%;
   display: inline-block;
