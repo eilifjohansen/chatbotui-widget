@@ -757,14 +757,17 @@ setTimeout(() => {
   };
 
   /* Scroll to bottom on click input */
-  document.querySelector(".usrInput").addEventListener("click", function () {
-    setTimeout(() => {
-      scrollToBottomOfResults();
-    }, 20);
-    setTimeout(() => {
-      scrollToBottomOfResults();
-    }, 300);
-  });
+
+  if (window.innerWidth < 768) {
+    document.querySelector(".usrInput").addEventListener("click", function () {
+      setTimeout(() => {
+        scrollToBottomOfResults();
+      }, 20);
+      setTimeout(() => {
+        scrollToBottomOfResults();
+      }, 300);
+    });
+  }
 
   //Send message function to send message the conversation.
   document.querySelector("#sendButton").addEventListener("click", function () {
