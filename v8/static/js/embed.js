@@ -16,16 +16,25 @@ if (!chartjs) {
 }
 
 if (!botphoto) {
-  var botphotoinside = "./static/img/email-black-18dp.svg";
-  var botphoto = "./static/img/email-white-18dp.svg";
+  var botphotoinside = "./static/img/chat.svg";
+  var botphoto = "./static/img/chat.svg";
 }
 
-if (botphoto != "./static/img/email-white-18dp.svg") {
+if (botphoto != "./static/img/chat.svg") {
   var botphotoinside = botphoto;
   var botphoto = botphoto;
 }
 
 // SVG Icons
+
+chaticon2 =
+  '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="' +
+  botcolor +
+  '" xmlns: xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml: space="preserve"><g><path d="M512,224c0-106-114.6-192-256-192S0,118,0,224s114.6,192,256,192h32c32,32,96,64,160,64c-16-16-32-64-32-106 C476.7,337.5,512,282.3,512,224" /></g></svg>';
+chaticon =
+  '<svg class="imgProfile" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="' +
+  botcolor +
+  '" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox = "0 0 512 512" style = "enable-background:new 0 0 512 512;" xml: space = "preserve" ><g><path d="M256,465.1c141.4,0,256-100.3,256-224s-114.6-224-256-224S0,117.4,0,241.1c0,56.3,23.8,107.8,63,147.2c-3.1,32.5-13.4,68.2-24.7,94.9c-2.5,6,2.4,12.6,8.7,11.6c72.2-11.8,115.1-30,133.8-39.5C205.4,461.8,230.6,465.1,256,465.1z"/></g></svg >';
 sendbot =
   '<svg id="sendButtonIcon" style="margin-top: -1.5px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
   botcolor +
@@ -74,14 +83,16 @@ if (fontawesome) {
 }
 let currentScrollPosition = null;
 
+/* <img class="imgProfile" alt="" src = "' +
+      botphoto +
+      '"/> */
+
 setTimeout(() => {
   document.body.insertAdjacentHTML(
     "beforeEnd",
-    '<button class="profile_div" title="Start chat" id="profile_div" tabindex="0"><img class="imgProfile" alt="" style="background:' +
-      botcolor +
-      '" src = "' +
-      botphoto +
-      '"/></button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:#fff"><span class="chat_header_title" style="color:' +
+    '<button class="profile_div" title="Start chat" id="profile_div" tabindex="0">' +
+      chaticon2 +
+      '</button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:#fff"><span class="chat_header_title" style="color:' +
       botcolor +
       '">' +
       botname +
@@ -1043,9 +1054,9 @@ setTimeout(() => {
     document
       .querySelectorAll(".chats .botMsg")
       [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(100);
-    document
+    /*document
       .querySelectorAll(".chats .botAvatar")
-      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);
+      [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(100);*/
 
     // initialize the collapsible
     let collapsibles = document.querySelectorAll(".collapsible-header");
