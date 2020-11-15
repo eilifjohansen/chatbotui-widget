@@ -138,6 +138,20 @@ setTimeout(() => {
     }
   };
 
+  /* Create unique id */
+  function create_UUID() {
+    var dt = new Date().getTime();
+    var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+      /[xy]/g,
+      function (c) {
+        var r = (dt + Math.random() * 16) % 16 | 0;
+        dt = Math.floor(dt / 16);
+        return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
+      }
+    );
+    return uuid;
+  }
+
   //initialization
   ready(function () {
     //Bot pop-up intro
@@ -156,7 +170,7 @@ setTimeout(() => {
     //global variables
     flow = "start";
     action_name = "action_greet_user";
-    user_id = "jitesh97";
+    user_id = create_UUID();
 
     //if you want the bot to start the conversation
     action_trigger();
