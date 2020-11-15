@@ -756,6 +756,11 @@ setTimeout(() => {
     }
   };
 
+  /* Scroll to bottom on click input */
+  document.querySelector(".usrInput").addEventListener("click", function () {
+    scrollToBottomOfResults();
+  });
+
   //Send message function to send message the conversation.
   document.querySelector("#sendButton").addEventListener("click", function () {
     var text = document.querySelector(".usrInput").value;
