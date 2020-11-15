@@ -181,7 +181,7 @@ setTimeout(() => {
     user_id = create_UUID();
 
     //if you want the bot to start the conversation
-    action_trigger();
+    startTriggered = true;
   });
 
   // ========================== restart conversation ========================
@@ -214,6 +214,8 @@ setTimeout(() => {
   // ========================== let the bot start the conversation ========================
   function action_trigger() {
     // send an event to the bot, so that bot can start the conversation by greeting the user
+
+    showBotTyping();
 
     fetch(webhook, {
       method: "POST",
@@ -583,6 +585,11 @@ setTimeout(() => {
       );
       toggleVisibility(".chatwidget");
       toggleVisibility(".profile_div");
+
+      if (startTriggered == true) {
+        action_trigger();
+        startTriggered = false;
+      }
 
       document.body.classList.add("chatbotui-modal-open");
 
