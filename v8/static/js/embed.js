@@ -165,6 +165,9 @@ setTimeout(() => {
   // ========================== restart conversation ========================
   function restartConversation() {
     document.getElementById("userInput").disabled = true;
+
+    flow = "start";
+
     //destroy the existing chart
     if (document.querySelector(".collapsible"))
       document.querySelector(".collapsible").remove();
