@@ -731,7 +731,7 @@ setTimeout(() => {
     document.body.classList.remove("chatbotui-modal-open");
   });
 
-  var closechataction = document.getElementById("close");
+  /*var closechataction = document.getElementById("close");
   closechataction.onkeyup = function keyPress(e) {
     wkey = e.which ? e.which : window.event.keyCode;
     if (wkey == 13) closechataction();
@@ -742,7 +742,7 @@ setTimeout(() => {
       toggleVisibility(".profile_div");
       scrollToBottomOfResults();
     }
-  };
+  };*/
 
   //minimize function to minimize the chatwidget.
   document.querySelector("#minimize").addEventListener("click", function () {
@@ -756,7 +756,7 @@ setTimeout(() => {
     document.body.classList.remove("chatbotui-modal-open");
   });
 
-  var minimizechataction = document.getElementById("minimize");
+  /* var minimizechataction = document.getElementById("minimize");
   minimizechataction.onkeyup = function keyPress(e) {
     wkey = e.which ? e.which : window.event.keyCode;
     if (wkey == 13) minimizechataction();
@@ -767,7 +767,7 @@ setTimeout(() => {
       toggleVisibility(".profile_div");
       scrollToBottomOfResults();
     }
-  };
+  };*/
 
   /* Scroll to bottom on click input */
 
