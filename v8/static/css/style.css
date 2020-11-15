@@ -172,9 +172,10 @@
   z-index: 999999;
   /* border-radius: 50%; */
   background: none;
-  background-color: transparent !important;
+  /*background-color: transparent !important;*/
   /*outline: none;*/
   border: 0px;
+  border-radius: 50%;
 }
 
 #profile_div .imgProfile {
