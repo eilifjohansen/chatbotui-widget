@@ -121,7 +121,7 @@
   }
 
   #chatwidget .chats {
-    height: 100%;
+    height: auto;
     border-radius: 1px;
     overflow-y: scroll;
     margin-top: 1px;
