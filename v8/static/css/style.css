@@ -302,7 +302,6 @@ textarea-webkit-scrollbar {
   justify-content: space-between;
   align-items: center;
   background: white;
-  width: 100%;
   padding: 7.5px 5px 7.5px 5px;
   border-radius: 0px 0px 10px 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -310,7 +309,6 @@ textarea-webkit-scrollbar {
 
 #sendButton {
   height: 30px;
-  margin-right: 13px;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
@@ -361,9 +359,13 @@ textarea-webkit-scrollbar {
   border: none;
 }
 
-#close,
-#restart,
 #minimize {
+  padding-top: 1px;
+  padding-bottom: 2px;
+}
+
+#close,
+#restart {
   padding-top: 1px;
   padding-bottom: 1px;
 }
