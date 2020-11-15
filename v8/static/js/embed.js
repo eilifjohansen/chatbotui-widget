@@ -30,7 +30,7 @@ if (botphoto != "./static/img/chat.svg") {
 chaticon2 =
   '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="' +
   botcolor +
-  '" xmlns: xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml: space="preserve"><g><path d="M512,224c0-106-114.6-192-256-192S0,118,0,224s114.6,192,256,192h32c32,32,96,64,160,64c-16-16-32-64-32-106 C476.7,337.5,512,282.3,512,224" /></g></svg>';
+  '" xmlns: xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml: space="preserve"><g><path d="M512,224c0-106-114.6-192-256-192S0,118,0,224s114.6,192,256,192h32c32,32,96,64,160,64c-16-16-32-64-32-106 C476.7,337.5,512,282.3,512,224" /></g></svg>';
 chaticon =
   '<svg class="imgProfile" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="' +
   botcolor +
