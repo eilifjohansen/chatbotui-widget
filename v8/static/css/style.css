@@ -775,7 +775,7 @@ div.content_data::-webkit-scrollbar {
   background: white;
   color: black;
   box-shadow: 2px 3px 9px 0px #9a82842e;
-  margin-left: 42px;
+  margin-left: 13.5px;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 1.5em;
@@ -792,7 +792,7 @@ div.content_data::-webkit-scrollbar {
 /* css for quick replies */
 
 #chatwidget .quickReplies {
-  padding: 5px;
+  padding: 5px 5px 5px 7.5px;
   position: relative;
   width: 100%;
   overflow-x: scroll;
@@ -891,10 +891,10 @@ ul.collapsible > li:last-child .collapsible-body {
   margin-bottom: 10px;
   float: left;
   margin-top: 5px;
-  background: white;
+  background: rgb(245, 245, 245);
   color: #2c53af;
   box-shadow: 2px 3px 9px 0px #9a82847a;
-  margin-left: 13.5px;
+  margin-left: 14.5px;
   padding: 15px;
   border-radius: 0 20px 20px 20px;
   max-width: 60%;
@@ -980,7 +980,7 @@ video:focus {
   width: 60%;
   height: 60px !important;
   border-radius: 10px;
-  margin-left: 42px;
+  margin-left: 14.5px;
   box-shadow: 2px 3px 9px 0px #9a82842e;
   margin-bottom: 15px;
 }
@@ -1027,7 +1027,7 @@ video:focus {
   font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
   line-height: 32px;
-  padding: 2.5px 12px 2.5px 12px;
+  padding: 3.5px 12px 3.5px 12px;
   border-radius: 30px;
   background-color: #e4e4e4;
   margin-bottom: 5px;
