@@ -302,7 +302,7 @@ textarea-webkit-scrollbar {
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 7.5px 5px 8.5px 5px;
+  padding: 7.5px 5px 7.5px 5px;
   border-radius: 0px 0px 10px 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -312,7 +312,7 @@ textarea-webkit-scrollbar {
   border-radius: 50%;
   display: inline-block;
   text-align: center;
-  padding: 6px;
+  padding: 5px 6px 5px 5px;
   font-size: 20px;
   cursor: pointer;
   color: #1976d2;
