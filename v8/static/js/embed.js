@@ -719,7 +719,9 @@ setTimeout(() => {
   //close function to close the chatwidget.
   document.querySelector("#close").addEventListener("click", function () {
     document.body.classList.remove("no-scroll");
-    document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    if (window.innerWidth < 768) {
+      document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    }
     setTimeout(() => {
       toggleVisibility(".chatwidget");
     }, 500);
@@ -747,7 +749,9 @@ setTimeout(() => {
   //minimize function to minimize the chatwidget.
   document.querySelector("#minimize").addEventListener("click", function () {
     document.body.classList.remove("no-scroll");
-    document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    if (window.innerWidth < 768) {
+      document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
+    }
     setTimeout(() => toggleVisibility(".chatwidget"), 500);
     document.querySelector(".chatwidget").classList.toggle("active");
 
