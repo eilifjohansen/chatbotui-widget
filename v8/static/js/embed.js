@@ -758,7 +758,12 @@ setTimeout(() => {
 
   /* Scroll to bottom on click input */
   document.querySelector(".usrInput").addEventListener("click", function () {
-    scrollToBottomOfResults();
+    setTimeout(() => {
+      scrollToBottomOfResults();
+    }, 20);
+    setTimeout(() => {
+      scrollToBottomOfResults();
+    }, 300);
   });
 
   //Send message function to send message the conversation.
