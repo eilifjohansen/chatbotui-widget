@@ -94,10 +94,6 @@ if (fontawesome) {
 }
 let currentScrollPosition = null;
 
-/* <img class="imgProfile" alt="" src = "' +
-      botphoto +
-      '"/> */
-
 setTimeout(() => {
   document.body.insertAdjacentHTML(
     "beforeEnd",
@@ -158,6 +154,7 @@ setTimeout(() => {
     // $("#userInput").prop('disabled', true);
 
     //global variables
+    flow = "start";
     action_name = "action_greet_user";
     user_id = "jitesh97";
 
@@ -200,6 +197,7 @@ setTimeout(() => {
       },
       body: JSON.stringify({
         name: action_name,
+        flow: flow,
         policy: "MappingPolicy",
         confidence: "0.98",
       }),
@@ -311,6 +309,7 @@ setTimeout(() => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        flow: flow,
         message: message,
         sender: user_id,
       }),
@@ -428,6 +427,11 @@ setTimeout(() => {
               [document.querySelectorAll(".chats .imgcard").length - 1].fadeIn(
                 300
               );
+          }
+
+          //check if the response contains "flow"
+          if (response[i].hasOwnProperty("flow")) {
+            flow = response[i].flow;
           }
 
           //check if the response contains "buttons"
