@@ -7,6 +7,10 @@ if (!botcolor2) {
   var botcolor2 = "#fff";
 }
 
+if (!translateInputText) {
+  var translateInputText = "Type a message...";
+}
+
 if (!botcss) {
   var botcss = "";
 }
@@ -111,7 +115,11 @@ setTimeout(() => {
       refreshbot +
       '</button><button title="Close chat" id="close" style="color: #fff" >' +
       closebot +
-      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <input type="text" id="userInput" aria-label="Type a message" placeholder="Type a message..." class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
+      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <input type="text" id="userInput" aria-label="' +
+      translateInputText +
+      '" placeholder="' +
+      translateInputText +
+      '" class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
       sendbot +
       "</button> </div></div></div>"
   );
