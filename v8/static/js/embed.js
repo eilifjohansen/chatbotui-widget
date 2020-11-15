@@ -698,7 +698,7 @@ setTimeout(() => {
           );
       }
       scrollToBottomOfResults();
-    }, 300);
+    }, 200);
   }
 
   // on click of suggestions, get the value and send to Chatbot
