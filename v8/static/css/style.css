@@ -362,6 +362,13 @@ textarea-webkit-scrollbar {
 }
 
 #close,
+#restart,
+#minimize {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+#close,
 #minimize {
   padding-left: 5px;
   padding-right: 5px;
