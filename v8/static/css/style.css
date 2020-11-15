@@ -558,7 +558,8 @@ div.content_data::-webkit-scrollbar {
 #chatwidget .imgcard {
   object-fit: cover;
   width: 80%;
-  height: 230px;
+  min-height: 230px;
+  height: 50%;
   border-radius: 10px;
   margin-left: 1%;
 }
