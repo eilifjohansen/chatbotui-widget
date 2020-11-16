@@ -359,11 +359,7 @@ textarea-webkit-scrollbar {
   border: none;
 }
 
-#minimize {
-  padding-top: 1px;
-  padding-bottom: 2px;
-}
-
+#minimiz,
 #close,
 #restart {
   padding-top: 1px;
