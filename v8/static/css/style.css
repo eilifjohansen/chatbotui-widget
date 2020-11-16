@@ -221,7 +221,7 @@
   background: rgb(245, 245, 245);
   color: black;
   box-shadow: 2px 3px 9px 0px #9a82842e;
-  margin-left: 13.5px;
+  margin-left: 14.5px;
   padding: 10px;
   border-radius: 1.5em;
   max-width: 75%;
@@ -790,7 +790,7 @@ div.content_data::-webkit-scrollbar {
   background: white;
   color: black;
   box-shadow: 2px 3px 9px 0px #9a82842e;
-  margin-left: 13.5px;
+  margin-left: 14.5px;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 1.5em;
