@@ -1,4 +1,12 @@
 // Custom variables
+if (!botname) {
+  var botname = "ChatbotUI";
+}
+
+if (!webhook) {
+  var webhook = "https://chatbotui.eilifjohansen.com/chat-widget-demo";
+}
+
 if (!botcolor) {
   var botcolor = "#1976d2";
 }
