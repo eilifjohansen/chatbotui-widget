@@ -8,7 +8,7 @@
     position: fixed;
     background: #fff;
     border-radius: 10px 10px 10px 10px;
-    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 #00000096;
     z-index: 999999;
     font-family: Arial, Helvetica, sans-serif;
     flex-direction: column;
@@ -92,7 +92,7 @@
     font-family: Arial, Helvetica, sans-serif;
     display: none;
     background: #fff;
-    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 #00000096;
     z-index: 999999;
 
     position: fixed;
