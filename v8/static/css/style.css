@@ -72,7 +72,7 @@
 /* On mobile */
 @media only screen and (max-width: 768px) {
   #chatwidget .keypad {
-    padding: 7.5px 5px 9.5px 5px;
+    padding: 9.5px 5px 9.5px 5px;
   }
 
   body.chatbotui-modal-open {
