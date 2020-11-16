@@ -7,10 +7,6 @@ if (!botcolor2) {
   var botcolor2 = "#fff";
 }
 
-if (!translateInputText) {
-  var translateInputText = "Type a message...";
-}
-
 if (!botcss) {
   var botcss = "";
 }
@@ -23,6 +19,32 @@ if (!chartjs) {
   var chartjs = "";
 }
 
+// Translations
+if (!translateInputText) {
+  var translateInputText = "Type a message...";
+}
+
+if (!translateStartChatText) {
+  var translateStartChatText = "Start chat";
+}
+
+if (!translateCloseChatText) {
+  var translateCloseChatText = "Close chat";
+}
+
+if (!translateMinimizeChatText) {
+  var translateMinimizeChatText = "Minimize chat";
+}
+
+if (!translateRestartChatText) {
+  var translateRestartChatText = "Restart chat";
+}
+
+if (!translateSendChatText) {
+  var translateSendChatText = "Send message";
+}
+
+// Photo svg switch
 if (!botphoto) {
   var botphoto = "hello";
   botphotoinside = "";
@@ -40,12 +62,10 @@ if (botphoto != "hello") {
 }
 
 // SVG Icons
-
 chaticon3 =
   '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><style type="text/css">.st0{fill:' +
   botcolor +
   ';}.st1{fill:#6695B0;}.st2{fill:#FFFFFF;}.st3{fill:#4F5D73;}</style><g id="XMLID_1_"><path id="XMLID_3_" class="st0" d="M256,0c141,0,256,115,256,256S397,512,256,512S0,397,0,256S115,0,256,0"/><path id="XMLID_4_" class="st1" d="M256,111.9c-88.2,0-159.9,64.6-159.9,144.1c0,76.4,66.2,139.4,150.4,143.4c5.5,29.9,9.5,48.8,9.5,48.8s40.2-23.6,76.4-65.4c49.6-24.4,83.5-71.7,83.5-126C415.9,176.4,344.2,111.9,256,111.9"/><path id="XMLID_5_" class="st2" d="M392.3,230c0,120.5-136.3,201.6-136.3,201.6s-74.8-336.3,0-336.3S392.3,156,392.3,230z"/><ellipse id="XMLID_6_" class="st2" cx="256" cy="240.2" rx="159.9" ry="144.1"/><circle id="XMLID_7_" class="st3" cx="256" cy="240.2" r="15.8"/><circle id="XMLID_8_" class="st3" cx="319.8" cy="240.2" r="15.8"/><circle id="XMLID_9_" class="st3" cx="192.2" cy="240.2" r="15.8"/></g></svg>';
-
 chaticon =
   '<svg class="imgProfile" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="' +
   botcolor +
@@ -105,21 +125,29 @@ setTimeout(() => {
       boticoncolor +
       '" tabindex="0">' +
       chaticon2 +
-      '</button><div class="chatwidget" tabindex="0" aria-label="chat window" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:#fff"><span class="chat_header_title" style="color:' +
+      '</button><div class="chatwidget" tabindex="0" aria-label="chat" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:#fff"><span class="chat_header_title" style="color:' +
       botcolor +
       '">' +
       botname +
-      '</span><span class="dropdown-trigger"><button title="Minimize chat" id="minimize" style="padding-right: 0px; color: #fff" >' +
+      '</span><span class="dropdown-trigger"><button title="' +
+      translateMinimizeChatText +
+      '" id="minimize" style="padding-right: 0px; color: #fff" >' +
       minimizebot +
-      '</button><button title="Restart chat" id="restart" style="padding-right: 3px; color: #fff" >' +
+      '</button><button title="' +
+      translateRestartChatText +
+      '" id="restart" style="padding-right: 3px; color: #fff" >' +
       refreshbot +
-      '</button><button title="Close chat" id="close" style="color: #fff" >' +
+      '</button><button title="' +
+      translateCloseChatText +
+      '" id="close" style="color: #fff" >' +
       closebot +
       '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <input type="text" id="userInput" aria-label="' +
       translateInputText +
       '" placeholder="' +
       translateInputText +
-      '" class="usrInput" ></textarea> <button id="sendButton" title="Send message" tabindex="0">' +
+      '" class="usrInput" ></textarea> <button id="sendButton" title="' +
+      translateSendChatText +
+      '" tabindex="0">' +
       sendbot +
       "</button> </div></div></div>"
   );
