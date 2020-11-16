@@ -26,9 +26,9 @@
   #chatwidget .chat_header {
     background: #1976d2;
     border-radius: 10px 10px 0px 0px;
-    padding: 10px 15.5px;
+    padding: 16px 15.5px;
     padding-right: 6px;
-    font-size: 1.5em;
+    font-size: 1.46em;
 
     display: flex;
     align-items: center;
@@ -65,7 +65,7 @@
   }
 
   #chatwidget .keypad {
-    padding: 7.5px 5px 7.5px 5px;
+    padding: 9px 5px 9px 5px;
   }
 }
 
@@ -123,8 +123,8 @@
     align-items: center;
     background: #1976d2;
     border-radius: 0px;
-    font-size: 1.5em;
-    padding: 12.5px;
+    font-size: 1.46em;
+    padding: 16px 12.5px 16px 12.5px;
     padding-right: 5px;
   }
 
