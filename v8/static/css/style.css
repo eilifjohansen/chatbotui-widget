@@ -196,6 +196,7 @@
 #chatwidget .chat_header_title {
   color: #000;
   font-weight: bold;
+  line-height: initial;
 }
 
 #chatwidget .clearfix {
