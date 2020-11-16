@@ -11,6 +11,14 @@ if (!botcolor) {
   var botcolor = "#1976d2";
 }
 
+if (!boticoncolor) {
+  var boticoncolor = botcolor;
+}
+
+if (boticoncolor) {
+  var boticoncolor = boticoncolor;
+}
+
 if (!botcolor2) {
   var botcolor2 = "#fff";
 }
@@ -56,7 +64,6 @@ if (!translateSendChatText) {
 if (!botphoto) {
   var botphoto = "hello";
   botphotoinside = "";
-  boticoncolor = botcolor;
   chaticon2 =
     '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="' +
     botcolor2 +
