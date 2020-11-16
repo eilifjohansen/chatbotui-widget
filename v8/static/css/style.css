@@ -378,6 +378,7 @@ textarea-webkit-scrollbar {
 }
 
 #chatwidget .dropdown-trigger {
+  display: inherit;
   cursor: pointer;
   color: white;
 }
