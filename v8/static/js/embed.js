@@ -222,6 +222,9 @@ setTimeout(() => {
     flow = "start";
     action_name = "action_greet_user";
     user_id = create_UUID();
+    memory1 = "";
+    memory2 = "";
+    memory3 = "";
 
     //if you want the bot to start the conversation
     startTriggered = true;
@@ -387,6 +390,9 @@ setTimeout(() => {
         flow: flow,
         message: message,
         sender: user_id,
+        memory1: memory1,
+        memory2: memory2,
+        memeory3: memory3,
       }),
     })
       .then(function (r) {
@@ -508,6 +514,17 @@ setTimeout(() => {
           //check if the response contains "flow"
           if (response[i].hasOwnProperty("flow")) {
             flow = response[i].flow;
+          }
+
+          //check if the response contains "memory"
+          if (response[i].hasOwnProperty("memory1")) {
+            memory1 = response[i].memory1;
+          }
+          if (response[i].hasOwnProperty("memory2")) {
+            memory2 = response[i].memory2;
+          }
+          if (response[i].hasOwnProperty("memory3")) {
+            memory3 = response[i].memory3;
           }
 
           //check if the response contains "buttons"
