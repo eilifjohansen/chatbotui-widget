@@ -251,6 +251,10 @@ setTimeout(() => {
     }
     document.querySelector(".chats").innerHTML = "";
     document.querySelector(".usrInput").value = "";
+
+    document
+      .querySelector(".chats")
+      .insertAdjacentHTML("beforeend", '<div class="clearfix"></div>');
     send("/restart");
   }
 
@@ -423,6 +427,7 @@ setTimeout(() => {
       hideBotTyping();
       if (response.length < 1) {
         //if there is no response from Chatbot, send  fallback message to the user
+
         var fallbackMsg = "I am facing some issues, please try again later!!!";
 
         var avatar = document.createElement("img");
