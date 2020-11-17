@@ -158,8 +158,8 @@
 /* Global CSS */
 
 #chatwidget p {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
@@ -169,7 +169,7 @@
 }
 
 #chatwidget .chats {
-  padding-top: 10px;
+  padding-top: 0px;
   padding-bottom: 10px;
 }
 
@@ -209,7 +209,7 @@
 
 #chatwidget .clearfix {
   margin-top: 2px;
-  margin-bottom: 2px;
+  margin-bottom: 18px;
   clear: both;
 }
 
