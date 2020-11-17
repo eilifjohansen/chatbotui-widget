@@ -156,6 +156,14 @@
 }
 
 /* Global CSS */
+
+#chatwidget p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 #chatwidget:focus {
   outline: 1px solid black;
 }
@@ -587,7 +595,7 @@ div.content_data::-webkit-scrollbar {
     background: #ffffff;
     box-shadow: 2px 5px 5px 1px #dbdade;
     */
-  margin-top: -10px;
+  /*margin-top: -10px;*/
   width: 80%;
 }
 
