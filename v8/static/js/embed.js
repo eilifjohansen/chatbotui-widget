@@ -391,7 +391,7 @@ setTimeout(() => {
       },
       body: JSON.stringify({
         flow: flow,
-        message: message,
+        message: message.replace(/"/g, "'"),
         sender: user_id,
         memory1: memory1,
         memory2: memory2,
