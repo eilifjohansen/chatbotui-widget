@@ -156,7 +156,7 @@ setTimeout(() => {
       translateCloseChatText +
       '" id="close" style="color: #fff" >' +
       closebot +
-      '</button></span></div><div class="chats" id="chats" role="log"> <div class="clearfix"></div> </div><div id="chat-footer"><div class="keypad"> <input type="text" id="userInput" aria-label="' +
+      '</button></span></div><div class="chats" id="chats" role="log"></div><div id="chat-footer"><div class="keypad"> <input type="text" id="userInput" aria-label="' +
       translateInputText +
       '" placeholder="' +
       translateInputText +
@@ -251,10 +251,10 @@ setTimeout(() => {
     }
     document.querySelector(".chats").innerHTML = "";
     document.querySelector(".usrInput").value = "";
-
+    /*
     document
       .querySelector(".chats")
-      .insertAdjacentHTML("beforeend", '<div class="clearfix"></div>');
+      .insertAdjacentHTML("beforeend", '<div class="clearfix"></div>');*/
     send("/restart");
   }
 
