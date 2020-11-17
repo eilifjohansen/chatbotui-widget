@@ -392,7 +392,7 @@ setTimeout(() => {
         sender: user_id,
         memory1: memory1,
         memory2: memory2,
-        memeory3: memory3,
+        memory3: memory3,
       }),
     })
       .then(function (r) {
