@@ -235,6 +235,9 @@ setTimeout(() => {
     document.getElementById("userInput").disabled = true;
 
     flow = "start";
+    memory1 = "";
+    memory2 = "";
+    memory3 = "";
 
     //destroy the existing chart
     if (document.querySelector(".collapsible"))
