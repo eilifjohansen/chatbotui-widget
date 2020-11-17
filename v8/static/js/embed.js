@@ -453,11 +453,11 @@ setTimeout(() => {
         document
           .querySelectorAll(".chats .botMsg")
           [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(300);
-        document
+        /* document
           .querySelectorAll(".chats .botAvatar")
           [document.querySelectorAll(".chats .botAvatar").length - 1].fadeIn(
             300
-          );
+          );*/
       } else {
         //if we get response from Chatbot
         for (i = 0; i < response.length; i++) {
