@@ -769,7 +769,7 @@ setTimeout(() => {
           );
       }
       scrollToBottomOfResults();
-    }, 40);
+    }, 0);
   }
 
   // on click of suggestions, get the value and send to Chatbot
