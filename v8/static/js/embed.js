@@ -630,10 +630,11 @@ setTimeout(() => {
           // Time to wait before showing the next message.
           // We'll make it a random number between 200 and 600 to make it dynamic.
           /* console.log(ms); */
-          /*
-          const ms = Math.random() * (600 - 200) + 200;
-          await sleep(ms);
-          */
+
+          if (!response[i].hasOwnProperty("buttons")) {
+            const ms = Math.random() * (600 - 200) + 200;
+            await sleep(ms);
+          }
         }
       }
 
@@ -643,7 +644,7 @@ setTimeout(() => {
           addSuggestion(response[i].buttons);
         }
       }
-    }, 400);
+    }, 500);
   }
 
   //====================================== Toggle chatbot =======================================
