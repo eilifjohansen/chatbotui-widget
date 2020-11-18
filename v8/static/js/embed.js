@@ -463,6 +463,7 @@ setTimeout(() => {
           );*/
       } else {
         //if we get response from Chatbot
+
         for (i = 0; i < response.length; i++) {
           //check if the response contains "text"
           if (response[i].hasOwnProperty("text")) {
@@ -528,11 +529,6 @@ setTimeout(() => {
           }
           if (response[i].hasOwnProperty("memory3")) {
             memory3 = response[i].memory3;
-          }
-
-          //check if the response contains "buttons"
-          if (response[i].hasOwnProperty("buttons")) {
-            addSuggestion(response[i].buttons);
           }
 
           //check if the response contains "attachment"
@@ -633,8 +629,15 @@ setTimeout(() => {
           // Time to wait before showing the next message.
           // We'll make it a random number between 200 and 600 to make it dynamic.
           const ms = Math.random() * (600 - 200) + 200;
-          console.log(ms);
+          /* console.log(ms); */
           await sleep(ms);
+        }
+      }
+
+      for (i = 0; i < response.length; i++) {
+        //check if the response contains "buttons"
+        if (response[i].hasOwnProperty("buttons")) {
+          addSuggestion(response[i].buttons);
         }
       }
     }, 500);
