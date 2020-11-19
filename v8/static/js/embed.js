@@ -60,6 +60,10 @@ if (!translateSendChatText) {
   var translateSendChatText = "Send message";
 }
 
+if (!translateChatError) {
+  var translateChatError = "I am facing some issues, please try again later!!!";
+}
+
 // Photo svg switch
 if (!botphoto) {
   var botphoto = "hello";
@@ -437,7 +441,7 @@ setTimeout(() => {
       if (response.length < 1) {
         //if there is no response from Chatbot, send  fallback message to the user
 
-        var fallbackMsg = "I am facing some issues, please try again later!!!";
+        var fallbackMsg = translateChatError;
 
         var avatar = document.createElement("img");
         avatar.classList.add("botAvatar");
