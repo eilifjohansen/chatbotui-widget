@@ -67,10 +67,18 @@
   #chatwidget .keypad {
     padding: 9px 5px 9px 5px;
   }
+
+  #profile_div {
+    width: 70px;
+  }
 }
 
 /* On mobile */
 @media only screen and (max-width: 768px) {
+  #profile_div {
+    width: 60px;
+  }
+
   #chatwidget .keypad {
     padding: 9.5px 5px 9.5px 5px;
   }
@@ -180,7 +188,6 @@
 #profile_div {
   position: fixed;
   padding: 5px;
-  width: 70px;
   /* height: 74px; */
   bottom: 20px;
   right: 20px;
