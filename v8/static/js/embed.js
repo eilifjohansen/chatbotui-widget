@@ -652,6 +652,36 @@ setTimeout(() => {
   }
 
   //====================================== Toggle chatbot =======================================
+  // Click on custom open chat button
+  var el = document.getElementById('open-chatbotui');
+if(el){
+ document.querySelector("#open-chatbotui").addEventListener(
+    "click",
+    function () {
+      currentScrollPosition =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      setTimeout(() => document.body.classList.add("no-scroll"), 500);
+      setTimeout(
+        () => document.querySelector(".chatwidget").classList.toggle("active"),
+        40
+      );
+      toggleVisibility(".chatwidget");
+      toggleVisibility(".profile_div");
+
+      if (startTriggered == true) {
+        action_trigger();
+        startTriggered = false;
+      }
+
+      document.body.classList.add("chatbotui-modal-open");
+
+      document.querySelector(".chatwidget").focus();
+    },
+    false
+ )
+};
+
+// Click on open chat icon
   document.querySelector("#profile_div").addEventListener(
     "click",
     function () {
