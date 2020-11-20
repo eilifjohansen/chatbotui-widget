@@ -69,14 +69,14 @@
   }
 
   #profile_div {
-    width: 70px;
+    width: 60px;
   }
 }
 
 /* On mobile */
 @media only screen and (max-width: 768px) {
   #profile_div {
-    width: 65px;
+    width: 60px;
   }
 
   #chatwidget .keypad {
