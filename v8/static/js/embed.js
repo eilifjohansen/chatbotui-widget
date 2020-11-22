@@ -456,7 +456,7 @@ setTimeout(() => {
         document.querySelector(".chats").appendChild(chatMsg);
         document
           .querySelector(".chats")
-          .insertAdjacentHTML("beforeend", '</p><div class="clearfix"></div>');
+          .insertAdjacentHTML("beforeend", '<div class="clearfix"></div>');
         document
           .querySelectorAll(".chats .botMsg")
           [document.querySelectorAll(".chats .botMsg").length - 1].fadeIn(300);
@@ -486,7 +486,7 @@ setTimeout(() => {
               .querySelector(".chats")
               .insertAdjacentHTML(
                 "beforeend",
-                '</p><div class="clearfix"></div>'
+                '<div class="clearfix"></div>'
               );
             document
               .querySelectorAll(".chats .botMsg")
