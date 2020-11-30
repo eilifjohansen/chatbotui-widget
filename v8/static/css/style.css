@@ -70,6 +70,7 @@
 
   #profile_div {
     width: 60px;
+    height: 60px;
   }
 }
 
@@ -77,6 +78,7 @@
 @media only screen and (max-width: 768px) {
   #profile_div {
     width: 60px;
+    height: 60px;
   }
 
   #chatwidget .keypad {
