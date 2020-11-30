@@ -199,6 +199,7 @@
   /*outline: none;*/
   border: 0px;
   border-radius: 50%;
+  font: initial;
 }
 
 #profile_div .imgProfile {
@@ -365,11 +366,13 @@ textarea-webkit-scrollbar {
   /* border-radius: 50% !important;*/
 }
 
+/*
 #minimize:hover,
 #close:hover,
 #restart:hover {
   background: #f2f2f2;
 }
+*/
 
 /* css for dropdown menu of the bot */
 

@@ -80,6 +80,7 @@ if (!translateChatError) {
   var translateChatError = "I am facing some issues, please try again later!!!";
 }
 
+
 // Photo svg switch
 if (!botphoto) {
   var botphoto = "hello";
@@ -121,6 +122,12 @@ minimizebot =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 11.5 24 17" class="undefined ns-fill-0" fill="' +
   headerColor +
   '" width="40" height="25"> <path d="M6 19h12v2H6v-2z"/></svg>';
+
+  function bgChange(bg) {
+  document.getElementById("closeIcon").style.background='#000000';
+}
+
+
 
 // Load JS and CSS
 function loadjscssfile(filename, filetype) {
