@@ -107,7 +107,7 @@ chaticon =
   botcolor +
   '" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox = "0 0 512 512" style = "enable-background:new 0 0 512 512;" xml: space = "preserve" ><g><path d="M256,465.1c141.4,0,256-100.3,256-224s-114.6-224-256-224S0,117.4,0,241.1c0,56.3,23.8,107.8,63,147.2c-3.1,32.5-13.4,68.2-24.7,94.9c-2.5,6,2.4,12.6,8.7,11.6c72.2-11.8,115.1-30,133.8-39.5C205.4,461.8,230.6,465.1,256,465.1z"/></g></svg >';
 sendbot =
-  '<svg id="sendButtonIcon" style="margin-top: -1.5px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
+  '<svg id="sendButtonIcon" style="margin-top: -2px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="undefined ns-fill-0" fill="' +
   botcolor +
   '" width="25" height="25"> <path d="M3.4 20.4l17.45-7.48a1 1 0 0 0 0-1.84L3.4 3.6a.993.993 0 0 0-1.39.91L2 9.12c0 .5.37.93.87.99L17 12L2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z"/></svg>';
 closebot =
