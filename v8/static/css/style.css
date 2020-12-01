@@ -945,7 +945,7 @@ ul.collapsible > li:last-child .collapsible-body {
   margin-left: 14.5px;
   padding: 10px;
   max-width: 60%;
-  min-width: 50px;
+  min-width: 60px;
   word-wrap: break-word;
   border-radius: 0 20px 20px 20px;
 }
