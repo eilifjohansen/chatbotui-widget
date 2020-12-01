@@ -256,7 +256,7 @@
   border-radius: 1.5em;
   max-width: 75%;
   min-width: 25%;
-  font-size: 16px;
+  font-size: 16px !important;
   word-wrap: break-word;
   border-radius: 0 20px 20px 20px;
   white-space: pre-line;
@@ -273,7 +273,7 @@
   background: #1976d2;
   color: white;
   margin-bottom: 0.15em;
-  font-size: 16px;
+  font-size: 16px !important;
   max-width: 75%;
   min-width: 15%;
   border-radius: 20px 0px 20px 20px;
