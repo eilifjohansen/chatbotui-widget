@@ -945,7 +945,7 @@ ul.collapsible > li:last-child .collapsible-body {
   margin-left: 14.5px;
   padding: 10px;
   max-width: 60%;
-  /* min-width: 20%; */
+  min-width: 45px;
   word-wrap: break-word;
   border-radius: 0 20px 20px 20px;
 }
@@ -1000,7 +1000,7 @@ ul.collapsible > li:last-child .collapsible-body {
 }
 
 #chatwidget input:disabled {
-  display: initial;
+  display: initial !important;
 }
 
 #chatwidget video:focus {
