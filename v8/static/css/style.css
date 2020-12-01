@@ -183,6 +183,7 @@
 #chatwidget .chats {
   padding-top: 14.5px;
   padding-bottom: 14.5px;
+  overflow-y: scroll;
 }
 
 #chatwidget .chat_header {
