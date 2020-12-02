@@ -812,12 +812,12 @@ if(el){
         .querySelector(".chats")
         .insertAdjacentHTML(
           "beforeend",
-          ' <div class="singleCard"> <div class="suggestions"><div class="menu"></div></div></diV>'
+          ' <div class="singleCard"> <div class="suggestions"><div class="chatwidgetMenu"></div></div></diV>'
         );
       // Loop through suggestions
       for (i = 0; i < suggLength; i++) {
         document
-          .querySelector(".menu")
+          .querySelector(".chatwidgetMenu")
           .insertAdjacentHTML(
             "beforeend",
             '<div tabindex="0" style="background: ' +
