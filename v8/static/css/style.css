@@ -335,6 +335,7 @@
   height: 40px;
   font-size: 16px;
   padding: 8.5px;
+  font-weight: initial;
 }
 
 #chatwidget .keypad {
