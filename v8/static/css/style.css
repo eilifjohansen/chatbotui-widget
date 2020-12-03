@@ -92,7 +92,7 @@
     display: fixed;
   }
 
-  body.no-scroll {
+  body.chatwidget-no-scroll {
     /* height: 100%; */
     touch-action: none !important;
     position: fixed;

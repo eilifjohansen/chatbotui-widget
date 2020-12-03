@@ -683,7 +683,7 @@ if(el){
     function () {
       currentScrollPosition =
         document.documentElement.scrollTop || document.body.scrollTop;
-      setTimeout(() => document.body.classList.add("no-scroll"), 500);
+      setTimeout(() => document.body.classList.add("chatwidget-no-scroll"), 500);
       setTimeout(
         () => document.querySelector(".chatwidget").classList.toggle("active"),
         40
@@ -710,7 +710,7 @@ if(el){
     function () {
       currentScrollPosition =
         document.documentElement.scrollTop || document.body.scrollTop;
-      setTimeout(() => document.body.classList.add("no-scroll"), 500);
+      setTimeout(() => document.body.classList.add("chatwidget-no-scroll"), 500);
       setTimeout(
         () => document.querySelector(".chatwidget").classList.toggle("active"),
         40
@@ -887,7 +887,7 @@ if(el){
 
   //close function to close the chatwidget.
   document.querySelector("#close").addEventListener("click", function () {
-    document.body.classList.remove("no-scroll");
+    document.body.classList.remove("chatwidget-no-scroll");
     if (window.innerWidth < 768) {
       document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
     }
@@ -917,7 +917,7 @@ if(el){
 
   //minimize function to minimize the chatwidget.
   document.querySelector("#minimize").addEventListener("click", function () {
-    document.body.classList.remove("no-scroll");
+    document.body.classList.remove("chatwidget-no-scroll");
     if (window.innerWidth < 768) {
       document.documentElement.scrollTop = document.body.scrollTop = currentScrollPosition;
     }
