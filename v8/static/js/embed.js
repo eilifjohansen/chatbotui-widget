@@ -147,10 +147,10 @@ function loadjscssfile(filename, filetype) {
     document.getElementsByTagName("head")[0].appendChild(fileref);
 }
 if (chartjs) {
-  loadjscssfile("https://widget.chatbotui.com/v8/static/js/chart.min.js", "js"); //dynamically load and add this .js file
+  loadjscssfile("https://cdn.lykkesdigitalt.no/v8/static/js/chart.min.js", "js"); //dynamically load and add this .js file
 }
 if (!botcss) {
-  loadjscssfile("https://widget.chatbotui.com/v8/static/css/style.css", "css"); //dynamically load and add this .css file
+  loadjscssfile("https://cdn.lykkesdigitalt.no/v8/static/css/style.css", "css"); //dynamically load and add this .css file
 }
 if (fontawesome) {
   loadjscssfile(
