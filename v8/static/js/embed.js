@@ -11,6 +11,10 @@ if (!botcolor) {
   var botcolor = "#1976d2";
 }
 
+if (!botbottom) {
+  var botbottom = "20px";
+}
+
 if (!boticoncolor) {
   var boticoncolor = botcolor;
 }
@@ -165,7 +169,7 @@ setTimeout(() => {
     "beforeEnd",
     '<button class="profile_div" title="Start chat" id="profile_div" style="background-color: ' +
       boticoncolor +
-      '" tabindex="0">' +
+      ';bottom:' + botbottom + ';" tabindex="0">' +
       chaticon2 +
       '</button><div class="chatwidget" tabindex="0" aria-label="chat" role="dialog" lang="en" id="chatwidget"><div class="chat_header" style="background:' + backgroundColor +'"><span class="chat_header_title" style="color:' +
       titleColor +

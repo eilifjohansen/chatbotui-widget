@@ -203,7 +203,6 @@
   position: fixed;
   padding: 5px;
   /* height: 74px; */
-  bottom: 20px;
   right: 20px;
   cursor: pointer;
   z-index: 999999;
